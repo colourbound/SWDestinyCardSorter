@@ -1,8 +1,8 @@
-var App = angular.module('myApp', []);
+var app = angular.module("myApp", [ngRoute]);
 
-App.controller('TodoCtrl', function($scope, $http) {
+App.controller('CardList', function($scope, $http) {
   $http.get('card-list.json')
        .then(function(res){
-          $scope.todos = res.data;
+          $scope.cardlist = res.data;
         });
 });
