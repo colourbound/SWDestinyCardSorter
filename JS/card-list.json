@@ -1,3 +1,11 @@
+/*EXTRA FIELDS
+
+CHARACTER CARDS
+- abilityCategory: Describes if the abiltiy has any specific use
+
+
+*/
+
 [
     {
         "sides": [
@@ -36,7 +44,10 @@
         "url": "http://swdestinydb.com/card/01001",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01001.jpg",
         "label": "Captain Phasma - Elite Trooper",
-        "cp": 1215
+        "cp": 1215,
+        "abilityCategory": [
+            "Guardian"
+        ]
     },
     {
         "sides": [
@@ -114,7 +125,11 @@
         "url": "http://swdestinydb.com/card/01003",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01003.jpg",
         "label": "General Grievous - Jedi Hunter",
-        "cp": 1318
+        "cp": 1318,
+        "abilityCategory": [
+            "BeforeDefeated",
+            "UpgradeMove"
+        ]
     },
     {
         "sides": [
@@ -153,7 +168,10 @@
         "url": "http://swdestinydb.com/card/01004",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01004.jpg",
         "label": "General Veers - Field Commander",
-        "cp": 1114
+        "cp": 1114,
+        "abilityCategory": [
+            "TurnSupportOwn"
+        ]
     },
     {
         "sides": [
@@ -194,7 +212,10 @@
         "url": "http://swdestinydb.com/card/01005",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01005.jpg",
         "label": "AT-ST",
-        "cp": 600
+        "cp": 600,
+        "abilityCategory": [
+            "DiscardSupportPlay"
+        ]
     },
     {
         "sides": [
@@ -236,6 +257,10 @@
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01006.jpg",
         "label": "First Order TIE Fighter",
         "cp": 300
+        ,
+        "abilityCategory": [
+            "ShieldRemovalOpponent"
+        ]
     },
     {
         "sides": [
@@ -276,7 +301,11 @@
         "url": "http://swdestinydb.com/card/01007",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01007.jpg",
         "label": "Commanding Presence",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "ValueIncreaseOwn",
+            "DieRemovalOpponent"
+        ]
     },
     {
         "sides": [
@@ -317,7 +346,11 @@
         "url": "http://swdestinydb.com/card/01008",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01008.jpg",
         "label": "F-11D Rifle",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Redeploy",
+            "DamageDistributed"
+        ]
     },
     {
         "sides": [
@@ -356,7 +389,10 @@
         "url": "http://swdestinydb.com/card/01009",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01009.jpg",
         "label": "Count Dooku - Devious Strategist",
-        "cp": 1115
+        "cp": 1115,
+        "abilityCategory": [
+            "ShieldGeneration"
+        ]
     },
     {
         "sides": [
@@ -395,7 +431,10 @@
         "url": "http://swdestinydb.com/card/01010",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01010.jpg",
         "label": "Darth Vader - Sith Lord",
-        "cp": 1621
+        "cp": 1621,
+        "abilityCategory": [
+            "DiscardCardHand",
+        ]
     },
     {
         "sides": [
