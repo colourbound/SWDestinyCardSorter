@@ -12,6 +12,20 @@ app.filter('nameContains', function () {
   };
 });
 
+app.filter('categoryIs', function () {
+  return function (items, searchCategory) {
+    var filtered = [];
+    var stringMatch = new RegExp(searchCategory, 'i');
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (stringMatch.test(item.category)) {
+        filtered.push(item);
+      }
+    }
+    return filtered;
+  };
+});
+
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
     $http.get('js/card-list.json')

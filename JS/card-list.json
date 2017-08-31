@@ -5579,7 +5579,8 @@
         "url": "http://swdestinydb.com/card/01160",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01160.jpg",
         "label": "Reversal",
-        "cp": 300
+        "cp": 300,
+        "category": "test"
     },
     {
         "set_code": "AW",
