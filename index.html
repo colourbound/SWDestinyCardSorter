@@ -10,23 +10,25 @@
   <body ng-app="myApp">
     <div class="header">
       <div class="container">
-        <h1>Book End</h1>
+        <h1>SW Destiny: Choose your destiny</h1>
       </div>
     </div>
 
     <div class="main" ng-controller="MainController">
       <div class="container">
 
-          <p>{{ cardlist }}</p>
+          <p>{{ errorHandlerReturn }}</p>
 
+        <h2>I'm looking for cards that:</h2>
+          <input type="text" ng-model="searchString" placeholder="Enter a letter to filter">
         <h1>{{ title }}</h1>
-        <h2>{{ promo }}</h2>
 
-        <div ng-repeat="product in products" class="col-md-6">
+
+        <div ng-repeat="card in cardlist | nameContains:searchString" class="col-md-6">
   				<div class="thumbnail">
-    				<img ng-src="{{ product.cover }}">
-    				<p class="title">{{ product.name }}</p>
-				    <p class="price">{{ product.price | currency }}</p>
+    				<img ng-src="{{ card.imagesrc }}">
+    				<p class="title">{{ card.name }}</p>
+				    <p class="price">{{ card.code }}</p>
 				    <p class="date">{{ product.pubdate | date }}</p>
 				    <div class="rating">
 				    	<p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>

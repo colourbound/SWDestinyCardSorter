@@ -1,3 +1,17 @@
+app.filter('nameContains', function () {
+  return function (items, searchString) {
+    var filtered = [];
+    var stringMatch = new RegExp(searchString, 'i');
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (stringMatch.test(item.name)) {
+        filtered.push(item);
+      }
+    }
+    return filtered;
+  };
+});
+
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
     $http.get('js/card-list.json')
@@ -6,10 +20,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         $scope.cardlist = response.data;
     }, function(response) {
         //Second function handles error
-        $scope.cardlist = "Something went wrong";
+        $scope.errorHandlerReturn = "Something went wrong";
     });
 
-  $scope.title = 'This Month\'s Bestsellers';
+  $scope.purpose = 'Discard';
   $scope.promo = 'The most popular books this month.';
   $scope.products = [
   	{
