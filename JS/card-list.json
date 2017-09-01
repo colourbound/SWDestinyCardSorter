@@ -127,7 +127,7 @@ CHARACTER CARDS
         "label": "General Grievous - Jedi Hunter",
         "cp": 1318,
         "abilityCategory": [
-            "BeforeDefeated",
+            "InterruptDefeatedBefore",
             "UpgradeMove"
         ]
     },
@@ -473,7 +473,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01011",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01011.jpg",
         "label": "Kylo Ren - Vader's Disciple",
-        "cp": 1013
+        "cp": 1013,
+        "abilityCategory": [
+            "HandPeak",
+            "DamageHandsize"
+        ]
     },
     {
         "sides": [
@@ -512,7 +516,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01012",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01012.jpg",
         "label": "Nightsister",
-        "cp": 800
+        "cp": 800,
+        "abilityCategory": [
+            "DieRerollOwn"
+        ]
     },
     {
         "sides": [
@@ -553,7 +560,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01013",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01013.jpg",
         "label": "Force Choke",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "DamageUnblockable",
+            "DieTurnOpponent"
+        ]
     },
     {
         "sides": [
@@ -594,7 +605,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01014",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01014.jpg",
         "label": "Immobilize",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "DieTurnBlank"
+        ]
     },
     {
         "sides": [
@@ -635,7 +649,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01015",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01015.jpg",
         "label": "Kylo Ren's Lightsaber",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Damage",
+            "DieRerollNoremove"
+        ]
     },
     {
         "sides": [
@@ -676,7 +694,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01016",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01016.jpg",
         "label": "Sith Holocron",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "UpgradeAttachIgnorerestrict"
+        ]
     },
     {
         "sides": [
@@ -717,7 +738,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01017",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01017.jpg",
         "label": "Infantry Grenades",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "DamageDistributed"
+        ]
     },
     {
         "sides": [
@@ -758,7 +782,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01018",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01018.jpg",
         "label": "Speeder Bike Scout",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "DieRemoval",
+            "ActionCheat"
+        ]
     },
     {
         "sides": [
@@ -797,7 +825,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01019",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01019.jpg",
         "label": "Bala-Tik - Gang Leader",
-        "cp": 811
+        "cp": 811,
+        "abilityCategory": [
+            "InterruptDefeatedAfterOpponent",
+            "CharacterReady"
+        ]
     },
     {
         "sides": [
@@ -836,7 +868,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01020",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01020.jpg",
         "label": "Jabba the Hutt - The Great and Mighty",
-        "cp": 1114
+        "cp": 1114,
+        "abilityCategory": [
+            "InterruptActivateAfterOwn",
+            "DieRerollOwn"
+        ]
     },
     {
         "sides": [
@@ -875,7 +911,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01021",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01021.jpg",
         "label": "Jango Fett - Lethal Mercenary",
-        "cp": 1216
+        "cp": 1216,
+        "abilityCategory": [
+            "InterruptActivateAfterOpponent",
+            "CharacterActivateOwn"
+        ]
     },
     {
         "sides": [
@@ -914,7 +954,12 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01022",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01022.jpg",
         "label": "Tusken Raider",
-        "cp": 900
+        "cp": 900,
+        "abilityCategory": [
+            "InterruptActivateAfter",
+            "ActionCheat",
+            "FastHands"
+        ]
     },
     {
         "sides": [
@@ -955,7 +1000,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01023",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01023.jpg",
         "label": "Crime Lord",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "CharacterDefeatOpponent"
+        ]
     },
     {
         "sides": [
@@ -996,7 +1044,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01024",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01024.jpg",
         "label": "Flame Thrower",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "DamageDistributed"
+        ]
     },
     {
         "sides": [
@@ -1037,7 +1088,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01025",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01025.jpg",
         "label": "Gaffi Stick",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Redploy",
+            "Damage"
+        ]
     },
     {
         "sides": [
