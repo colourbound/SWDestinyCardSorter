@@ -1,11 +1,3 @@
-/*EXTRA FIELDS
-
-CHARACTER CARDS
-- abilityCategory: Describes if the abiltiy has any specific use
-
-
-*/
-
 [
     {
         "sides": [
@@ -433,7 +425,7 @@ CHARACTER CARDS
         "label": "Darth Vader - Sith Lord",
         "cp": 1621,
         "abilityCategory": [
-            "DiscardCardHand",
+            "DiscardCardHand"
         ]
     },
     {
@@ -2082,6 +2074,7 @@ CHARACTER CARDS
         "cp": 1014,
         "abilityCategory": [
             "DiscardDeck"
+        ]
     },
     {
         "sides": [
@@ -2125,6 +2118,7 @@ CHARACTER CARDS
         "cp": 500,
         "abilityCategory": [
             "PlayfromDiscardHandEvent"
+        ]
     },
     {
         "sides": [
