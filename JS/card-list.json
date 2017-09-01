@@ -651,7 +651,7 @@ CHARACTER CARDS
         "label": "Kylo Ren's Lightsaber",
         "cp": 300,
         "abilityCategory": [
-            "Damage",
+            "DamageNoremove",
             "DieRerollNoremove"
         ]
     },
@@ -1091,7 +1091,7 @@ CHARACTER CARDS
         "cp": 200,
         "abilityCategory": [
             "Redploy",
-            "Damage"
+            "DamageUpsize"
         ]
     },
     {
@@ -1133,7 +1133,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01026",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01026.jpg",
         "label": "On The Hunt",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "ShieldRemoval",
+            "DieRemoval"
+        ]
     },
     {
         "sides": [
@@ -1172,7 +1176,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01027",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01027.jpg",
         "label": "Admiral Ackbar - Perceptive Tactician",
-        "cp": 1014
+        "cp": 1014,
+        "abilityCategory": [
+            "InterruptLastcardAfter",
+            "DamageDistributedIncidental"
+        ]
     },
     {
         "sides": [
@@ -1211,7 +1219,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01028",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01028.jpg",
         "label": "Leia Organa - Born Leader",
-        "cp": 1216
+        "cp": 1216,
+        "abilityCategory": [
+            "DieRerollOwn"
+        ]
     },
     {
         "sides": [
@@ -1250,7 +1261,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01029",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01029.jpg",
         "label": "Poe Dameron - Ace Pilot",
-        "cp": 1418
+        "cp": 1418,
+        "abilityCategory": [
+            "DieResolve",
+            "PlayfromDiscard"
+        ]
     },
     {
         "sides": [
@@ -1328,7 +1343,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01031",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01031.jpg",
         "label": "Launch Bay",
-        "cp": 500
+        "cp": 500,
+        "abilityCategory": [
+            "DamageHandsize"
+        ]
     },
     {
         "sides": [
@@ -1369,7 +1387,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01032",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01032.jpg",
         "label": "Black One",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "DamageNoremove",
+            "DieReroll"
+        ]
     },
     {
         "sides": [
@@ -1410,7 +1432,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01033",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01033.jpg",
         "label": "Scout",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "HandReveal",
+            "DiscardHand"
+        ]
     },
     {
         "sides": [
@@ -1490,7 +1516,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01035",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01035.jpg",
         "label": "Luke Skywalker - Jedi Knight",
-        "cp": 1520
+        "cp": 1520,
+        "abilityCategory": [
+            "CardDraw",
+            "InterruptActivateAfterOwn"
+        ]
     },
     {
         "sides": [
@@ -1529,7 +1559,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01036",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01036.jpg",
         "label": "Padawan",
-        "cp": 800
+        "cp": 800,
+        "abilityCategory": [
+            "UpgradeCostreduce"
+        ]
     },
     {
         "sides": [
@@ -1568,7 +1601,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01037",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01037.jpg",
         "label": "Qui-Gon Jinn - Ataru Master",
-        "cp": 1317
+        "cp": 1317,
+        "abilityCategory": [
+            "InterruptShieldBefore",
+            "DamageTrade"
+        ]
     },
     {
         "sides": [
@@ -1607,7 +1644,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01038",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01038.jpg",
         "label": "Rey - Force Prodigy",
-        "cp": 912
+        "cp": 912,
+        "abilityCategory": [
+            "ActionCheat"
+        ]
     },
     {
         "sides": [
@@ -1648,7 +1688,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01039",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01039.jpg",
         "label": "Force Protection",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "ShieldGenerationDistributed"
+        ]
     },
     {
         "sides": [
@@ -1689,7 +1732,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01040",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01040.jpg",
         "label": "Jedi Robes",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "InterruptPlayAfterOwn",
+            "ShieldGeneration"
+        ]
     },
     {
         "sides": [
@@ -1730,7 +1777,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01041",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01041.jpg",
         "label": "Luke Skywalker's Lightsaber",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "ShieldGeneration",
+            "DamageUnblockable"
+        ]
     },
     {
         "sides": [
@@ -1771,7 +1822,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01042",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01042.jpg",
         "label": "One With The Force",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "InterruptDefeatedBefore",
+            "UpgradeTransferSupport"
+        ]
     },
     {
         "sides": [
@@ -1812,7 +1867,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01043",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01043.jpg",
         "label": "BB-8",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "DieRerollNoremove",
+            "DieResolveNoremove"
+        ]
     },
     {
         "sides": [
@@ -1853,7 +1912,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01044",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01044.jpg",
         "label": "Rey's Staff",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "DieRemovalMeleeRanged"
+        ]
     },
     {
         "sides": [
@@ -1892,7 +1954,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01045",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01045.jpg",
         "label": "Finn - First Order Defector",
-        "cp": 1316
+        "cp": 1316,
+        "abilityCategory": [
+            "UpgradeIgnorerestrictWeapon",
+            "DeckCardincludeRedVillainWeaponVehicles"
+        ]
     },
     {
         "sides": [
@@ -1931,7 +1997,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01046",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01046.jpg",
         "label": "Han Solo - Scoundrel",
-        "cp": 1418
+        "cp": 1418,
+        "abilityCategory": [
+            "InterruptPlayAmbushAfter",
+            "ShieldGeneration"
+        ]
     },
     {
         "sides": [
@@ -2009,7 +2079,9 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01048",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01048.jpg",
         "label": "Padme Amidala - Queen of Naboo",
-        "cp": 1014
+        "cp": 1014,
+        "abilityCategory": [
+            "DiscardDeck"
     },
     {
         "sides": [
@@ -2050,7 +2122,9 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01049",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01049.jpg",
         "label": "Millennium Falcon",
-        "cp": 500
+        "cp": 500,
+        "abilityCategory": [
+            "PlayfromDiscardHandEvent"
     },
     {
         "sides": [
@@ -2091,7 +2165,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01050",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01050.jpg",
         "label": "Diplomatic Immunity",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "ShieldDistributed"
+        ]
     },
     {
         "sides": [
@@ -2132,7 +2209,12 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01051",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01051.jpg",
         "label": "DL-44 Heavy Blaster Pistol",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Ambush",
+            "InterruptPlayUpgradeAfter",
+            "DieRemovalChoice"
+        ]
     },
     {
         "sides": [
@@ -2173,7 +2255,10 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01052",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01052.jpg",
         "label": "Infiltrate",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "DieRerollOpponent"
+        ]
     },
     {
         "sides": [
@@ -2212,7 +2297,11 @@ CHARACTER CARDS
         "url": "http://swdestinydb.com/card/01053",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01053.jpg",
         "label": "Outpost",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Bookmark",
+            "PlayfromDiscard"
+        ]
     },
     {
         "sides": [
