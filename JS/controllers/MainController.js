@@ -50,20 +50,53 @@ app.filter('affiliationIs', function () {
   };
 });
 
-/*app.filter('affiliationIs', function () {
-  return function (items, searchAffiliation) {
+app.filter('typeIs', function () {
+  return function (items, searchType) {
     var filtered = [];
-    var stringMatch = new RegExp(searchAffiliation, 'i');
+    var isTrue = false;
     for (var i = 0; i < items.length; i++) {
         var item = items[i];
-        if (stringMatch.test(item.affiliation_name)) {
-            filtered.push(item);
+        for (var j = 0; j < searchType.length; j++) {
+            var stringMatch = new RegExp(searchType[j], 'i');
+            if (stringMatch.test(item.type_name)) {
+                isTrue = true;
         }
       }
+
+      if (isTrue == true) {
+                filtered.push(item);
+        }
+      var isTrue = false;
+
     }
     return filtered;
   };
-});*/
+});
+
+app.filter('colourIs', function () {
+  return function (items, searchColour) {
+    var filtered = [];
+    var isTrue = false;
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        for (var j = 0; j < searchColour.length; j++) {
+            var stringMatch = new RegExp(searchColour[j], 'i');
+            if (stringMatch.test(item.faction_code)) {
+                isTrue = true;
+        }
+      }
+
+      if (isTrue == true) {
+                filtered.push(item);
+        }
+      var isTrue = false;
+
+    }
+    return filtered;
+  };
+});
+
+
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
@@ -119,7 +152,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   	$scope.products[index].dislikes += 1;
 	};
 
-// Toggle filter---------------------------------
+// Affiliation Toggle filter---------------------------------
 
   // Fruits
   $scope.affiliations = ['Hero', 'Neutral', 'Villain'];
@@ -139,6 +172,60 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     // Is newly selected
     else {
       $scope.selection.push(affiliationName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Type Toggle filter---------------------------------
+
+  // Fruits
+  $scope.types = ['Battlefield', 'Character', 'Event', 'Support', 'Upgrade' ];
+
+  // Selected fruits
+  $scope.typesSelection = ['Battlefield', 'Character'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleTypesSelection = function toggleTypesSelection(typeName) {
+    var idx = $scope.typesSelection.indexOf(typeName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.typesSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.typesSelection.push(typeName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Colour Toggle filter---------------------------------
+
+  // Fruits
+  $scope.colours = ['Red', 'Blue', 'Yellow', 'Grey'];
+
+  // Selected fruits
+  $scope.coloursSelection = ['Red', 'Blue'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleColoursSelection = function toggleColoursSelection(colourName) {
+    var idx = $scope.coloursSelection.indexOf(colourName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.coloursSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.coloursSelection.push(colourName);
         $scope.setObject = function(newValue) {
         $scope.objectValue.data = newValue;
         sharedProperties.setObject(newValue);
