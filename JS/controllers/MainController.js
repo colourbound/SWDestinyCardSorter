@@ -26,6 +26,45 @@ app.filter('categoryIs', function () {
   };
 });
 
+app.filter('affiliationIs', function () {
+  return function (items, searchAffiliation) {
+    var filtered = [];
+    var isTrue = false;
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        for (var j = 0; j < searchAffiliation.length; j++) {
+            //var currentObject = searchAffiliation[j];
+            var stringMatch = new RegExp(searchAffiliation[j], 'i');
+            if (stringMatch.test(item.affiliation_name)) {
+                isTrue = true;
+        }
+      }
+
+      if (isTrue == true) {
+                filtered.push(item);
+        }
+      var isTrue = false;
+
+    }
+    return filtered;
+  };
+});
+
+/*app.filter('affiliationIs', function () {
+  return function (items, searchAffiliation) {
+    var filtered = [];
+    var stringMatch = new RegExp(searchAffiliation, 'i');
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        if (stringMatch.test(item.affiliation_name)) {
+            filtered.push(item);
+        }
+      }
+    }
+    return filtered;
+  };
+});*/
+
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
     $http.get('js/card-list.json')
@@ -79,4 +118,34 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	$scope.minusOne = function(index) {
   	$scope.products[index].dislikes += 1;
 	};
+
+// Toggle filter---------------------------------
+
+  // Fruits
+  $scope.affiliations = ['Hero', 'Neutral', 'Villain'];
+
+  // Selected fruits
+  $scope.selection = ['Hero', 'Neutral'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleSelection = function toggleSelection(affiliationName) {
+    var idx = $scope.selection.indexOf(affiliationName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.selection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.selection.push(affiliationName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+
 }]);
