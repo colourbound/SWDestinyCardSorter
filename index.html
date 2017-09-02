@@ -22,12 +22,14 @@
 
         <h2>I'm looking for cards that:</h2>
           <input type="text" ng-model="searchString" placeholder="Name Filter">
-          <input type="text" ng-model="searchCategory" placeholder="Category Filter">
+          <input type="text" ng-model="searchCategory" placeholder="Category String Filter">
           <input type="text" ng-model="dieSidesSearch" placeholder="Die Sides Filter">
+          <input type="text" ng-model="searchAbilityCategory" placeholder="Ability Category Filter">
+          <input type="text" ng-model="searchAbilityCategory2" placeholder="Ability Category Filter2">
         <h1>{{ purpose }}</h1>
 
 
-        <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch }" class="col-md-6">
+        <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2 }" class="col-md-6">
   				<div class="thumbnail">
     				<img ng-src="{{ card.imagesrc }}">
     				<p class="title">{{ card.name }}</p>
