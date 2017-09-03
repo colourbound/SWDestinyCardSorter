@@ -97,8 +97,12 @@ app.filter('colourIs', function () {
 });
 
 app.filter('sideIs', function () {
-  return function (items, searchSides, checkboxValue) {
+  return function (items, searchSides, checkboxValue, dieSwitch) {
+      console.log("sides var = " + dieSwitch);
+  if (dieSwitch == true)  {
     var filtered = [];
+
+      console.log("sides var = " + searchSides);
 
     console.log("checkbox = " + checkboxValue);
     //Test for OnlySides filter
@@ -122,7 +126,7 @@ app.filter('sideIs', function () {
                     }
                 }
             }
-
+//console.log("isTrue var = " + isTrue + ", item " + i);
           if (isTrue == true) {
             filtered.push(item);
             }
@@ -184,8 +188,10 @@ app.filter('sideIs', function () {
         }//items for end
     }//else end
 
-
+console.log("filtered = " + filtered);
     return filtered;
+
+   }
   };
 });
 
@@ -345,8 +351,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
   // Selected fruits
   $scope.sidesSelection = [
-            "RD"//,//Ranged Dmage
-           // "MD",//Melee Damage
+            "RD",//Ranged Dmage
+            "MD"//,//Melee Damage
            // "F",//Focus
            // "Dc",//Discard
          //   "Dr",//Disrupt
@@ -377,10 +383,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   };
 
 
-
+//set the values up for passing checkboxes - currently only OnlySides is used
     $scope.checkboxModel = {
        OnlySides : false,
-       value2 : 'YES'
+       DieSidesOnOff : false
      };
 
 
