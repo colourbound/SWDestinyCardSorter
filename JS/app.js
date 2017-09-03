@@ -1,6 +1,6 @@
 var app = angular.module("myApp", []);
 
-app.service('sharedProperties', function() {
+/*app.service('sharedProperties', function() {
     var objectValue = ['Hero', 'Neutral', 'Villain'];
 
     return {
@@ -30,3 +30,4 @@ app.controller('myController2', function($scope, sharedProperties) {
         sharedProperties.setObject(newValue);
     };
 });
+*/

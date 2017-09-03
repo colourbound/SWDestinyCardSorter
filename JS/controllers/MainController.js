@@ -209,10 +209,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 // Colour Toggle filter---------------------------------
 
   // Fruits
-  $scope.colours = ['Red', 'Blue', 'Yellow', 'Grey'];
+  $scope.colours = ['Red', 'Blue', 'Yellow', 'Gray'];
 
   // Selected fruits
-  $scope.coloursSelection = ['Red', 'Blue'];
+  $scope.coloursSelection = ['Red', 'Blue', 'Gray'];
 
   // Toggle selection for a given fruit by name
   $scope.toggleColoursSelection = function toggleColoursSelection(colourName) {

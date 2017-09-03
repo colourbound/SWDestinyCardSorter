@@ -1,3 +1,6 @@
+/* THIS IS UNUSED
+
+
 app.controller('SimpleArrayCtrl', ['$scope', function SimpleArrayCtrl($scope, sharedProperties) {
 
   // Fruits
@@ -31,4 +34,4 @@ app.controller('SimpleArrayCtrl', ['$scope', function SimpleArrayCtrl($scope, sh
     };
     }
   };
-}]);
+}]);*/

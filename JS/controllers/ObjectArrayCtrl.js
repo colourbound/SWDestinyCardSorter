@@ -1,3 +1,5 @@
+/* THIS IS UNUSED
+
 app.controller('ObjectArrayCtrl', ['$scope', 'filterFilter', function ObjectArrayCtrl($scope, filterFilter) {
 
   // Affiliation
@@ -22,3 +24,4 @@ app.controller('ObjectArrayCtrl', ['$scope', 'filterFilter', function ObjectArra
     });
   }, true);
 }]);
+*/
