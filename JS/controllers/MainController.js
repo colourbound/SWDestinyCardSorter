@@ -96,6 +96,89 @@ app.filter('colourIs', function () {
   };
 });
 
+app.filter('sideIs', function () {
+  return function (items, searchSides, checkboxValue) {
+    var filtered = [];
+
+    console.log(checkboxValue);
+    //Test for OnlySides filter
+    if (checkboxValue == false) {
+        //reset the flag variable
+        var isTrue = false;
+        //run through the different items in the JSON array
+        for (var i = 0; i < items.length; i++) {
+            //set the individual item
+            var item = items[i];
+            //run through the selected array and match them against current item
+            for (var j = 0; j < searchSides.length; j++) {
+                //set the reg express
+                var stringMatch = new RegExp(searchSides[j], 'i');
+                //console.log(searchSides[j])
+                //run through each of the sides within the sides array
+                for (var k = 0; k < item.sides.length; k++) {
+                    //console.log(item.sides[k])
+                    if (stringMatch.test(item.sides[k])) {
+                        isTrue = true;
+                    }
+                }
+            }
+
+          if (isTrue == true) {
+            filtered.push(item);
+            }
+          var isTrue = false;
+
+        }
+      }
+
+    else {
+        //set the starter flag value
+        var TrueTest = true;
+        var resetValue = false;
+        //reset the flag variables
+        var isTrue = [];
+        //create an item in the array for each search term
+        for (var l = 0; l < searchSides.length; l++){
+            isTrue.push(resetValue);
+            }
+        //run through the different items in the JSON array
+        for (var i = 0; i < items.length; i++) {
+            //set the individual item
+            var item = items[i];
+            //run through the selected array and match them against current item
+            for (var j = 0; j < searchSides.length; j++) {
+                //set the reg express
+                var stringMatch = new RegExp(searchSides[j], 'i');
+                //console.log(searchSides[j])
+                //run through each of the sides within the sides array
+                for (var k = 0; k < item.sides.length; k++) {
+                    //console.log(item.sides[k])
+                    if (stringMatch.test(item.sides[k])) {
+                        isTrue[k] = true;
+                    }
+                }
+            }
+          //now go through the array and check for any false returns
+          for (var p = 0; p < searchSides.length; p++){
+              if (isTrue[p] == false) {
+                TrueTest = false;
+                }
+            }
+
+          //final test to see if any of the values returned false
+          if (TrueTest == true) {
+            filtered.push(item);
+            }
+
+
+        }
+    }
+
+
+    return filtered;
+  };
+});
+
 
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
@@ -234,5 +317,79 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   };
 
 
+// Dice Toggle filter---------------------------------
+
+  // Fruits
+  $scope.dieSides = [
+            "RD",//Ranged Dmage
+            "MD",//Melee Damage
+            "F",//Focus
+            "Dc",//Discard
+            "Dr",//Disrupt
+            "Sh",//Shield
+            "R",//Resource
+            "Sp",//Special
+            "-",//Blank
+            "+"//Modified
+        ];
+
+  // Selected fruits
+  $scope.sidesSelection = [
+            "RD"//,//Ranged Dmage
+           // "MD",//Melee Damage
+           // "F",//Focus
+           // "Dc",//Discard
+         //   "Dr",//Disrupt
+       //     "Sh",//Shield
+     //       "R",//Resource
+     //       "Sp",//Special
+     //       "-",//Blank
+   //         "+"//Modified
+        ];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleSidesSelection = function toggleSidesSelection(sideName) {
+    var idx = $scope.sidesSelection.indexOf(sideName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.sidesSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.sidesSelection.push(sideName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+
+    $scope.checkboxModel = {
+       OnlySides : false,
+       value2 : 'YES'
+     };
+
+
+
+
+
 
 }]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
