@@ -100,7 +100,7 @@ app.filter('sideIs', function () {
   return function (items, searchSides, checkboxValue) {
     var filtered = [];
 
-    console.log(checkboxValue);
+    console.log("checkbox = " + checkboxValue);
     //Test for OnlySides filter
     if (checkboxValue == false) {
         //reset the flag variable
@@ -140,6 +140,7 @@ app.filter('sideIs', function () {
         //create an item in the array for each search term
         for (var l = 0; l < searchSides.length; l++){
             isTrue.push(resetValue);
+            //console.log("Variable", isTrue[l])
             }
         //run through the different items in the JSON array
         for (var i = 0; i < items.length; i++) {
@@ -154,7 +155,7 @@ app.filter('sideIs', function () {
                 for (var k = 0; k < item.sides.length; k++) {
                     //console.log(item.sides[k])
                     if (stringMatch.test(item.sides[k])) {
-                        isTrue[k] = true;
+                        isTrue[j] = true;
                     }
                 }
             }
@@ -170,9 +171,18 @@ app.filter('sideIs', function () {
             filtered.push(item);
             }
 
+            //VALUE RESET
+           //set the starter flag value
+        var TrueTest = true;
+        //create an item in the array for each search term
+        for (var n = 0; n < searchSides.length; n++){
+            isTrue[n] = resetValue;
+            //console.log("Variable", isTrue[l])
+            }
 
-        }
-    }
+
+        }//items for end
+    }//else end
 
 
     return filtered;
