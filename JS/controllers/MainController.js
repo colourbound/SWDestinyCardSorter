@@ -195,6 +195,69 @@ console.log("filtered = " + filtered);
   };
 });
 
+app.filter('sideIsSimple', function () {
+  return function (items, searchSides) {
+      //console.log("sides var = " + dieSwitch);
+    var filtered = [];
+    var isTrue = false;
+
+    angular.forEach(items, function(item) {
+        angular.forEach(searchSides, function(side) {
+            var escaped = side.replace(/[^\w\s]/g, "\\$&");
+            var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+            if(stringMatch.test(item.sides)) {
+                isTrue = true;
+            }
+        });
+        if (isTrue == true) {
+            filtered.push(item);
+            }
+          var isTrue = false;
+    });
+    return filtered;
+    };
+
+
+/*    console.log("sides var = " + searchSides);
+        //reset the flag variable
+        var isTrue = false;
+        //run through the different items in the JSON array
+        for (var i = 0; i < items.length; i++) {
+            //set the individual item
+            var item = items[i];
+            console.log("pre searchSides stop");
+            //run through the selected array and match them against current item
+            for (var j = 0; j < searchSides.length; j++) {
+                //set the reg express
+                var stringMatch = new RegExp(searchSides[j], 'i');
+                console.log("searhSides var = " + searchSides[j])
+                console.log("pre sides length stop");
+                //run through each of the sides within the sides array
+                for (var q = 0; q < item.sides.length; q++) {
+                    console.log("Current Item Sides = " + item.sides[k])
+                    if (stringMatch.test(item.sides[k])) {
+                        isTrue = true;
+                    }
+                }
+            }
+console.log("isTrue var = " + isTrue + ", item " + i);
+          if (isTrue == true) {
+            filtered.push(item);
+            }
+          var isTrue = false;
+
+        }
+
+
+
+
+console.log("filtered = " + filtered);
+    return filtered;
+
+
+  };*/
+});
+
 
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
@@ -351,16 +414,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
   // Selected fruits
   $scope.sidesSelection = [
-            "RD",//Ranged Dmage
-            "MD"//,//Melee Damage
-           // "F",//Focus
-           // "Dc",//Discard
-         //   "Dr",//Disrupt
-       //     "Sh",//Shield
-     //       "R",//Resource
-     //       "Sp",//Special
-     //       "-",//Blank
-   //         "+"//Modified
+            //"RD",//Ranged Dmage
+            "+"
         ];
 
   // Toggle selection for a given fruit by name
@@ -383,10 +438,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   };
 
 
-//set the values up for passing checkboxes - currently only OnlySides is used
+//set the values up for passing checkboxes
     $scope.checkboxModel = {
        OnlySides : false,
-       DieSidesOnOff : false
+       DieSidesOnOff : true
      };
 
 
