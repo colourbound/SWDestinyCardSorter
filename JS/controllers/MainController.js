@@ -258,6 +258,88 @@ console.log("filtered = " + filtered);
   };*/
 });
 
+app.filter('sideIsComplex', function () {
+  return function (items, searchSides, checkboxValue) {
+      //console.log("sides var = " + dieSwitch);
+    var filtered = [];
+
+    if (checkboxValue == false) {
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(searchSides, function(side) {
+                var escaped = side.replace(/[^\w\s]/g, "\\$&");
+                var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                if(stringMatch.test(item.sides)) {
+                    isTrue = true;
+                }
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+    }
+
+    else {
+        //console.log("checkbox = " + checkboxValue);
+        //set the starter flag value
+        var TrueTest = true;
+        var resetValue = false;
+        //reset the flag variables
+        var isTrue = [];
+        //create an item in the array for each search term
+        angular.forEach(searchSides, function (side) {
+            isTrue.push(resetValue);
+            //console.log("Stop 1");
+        });
+
+        //console.log("isTrue Array = " + isTrue);
+
+
+
+
+        angular.forEach(items, function (item) {
+            angular.forEach(searchSides, function (side) {
+                var escaped = side.replace(/[^\w\s]/g, "\\$&");
+                var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                if (stringMatch.test(item.sides)) {
+                    var idx = side.indexOf(side);
+                    console.log("idx = " + idx);
+                    isTrue[side] = true;
+                }
+            });
+
+
+            //now go through the array and check for any false returns
+            angular.forEach(isTrue, function (truth) {
+                if (truth == false) {
+                    TrueTest = false;
+                }
+            });
+
+            //final test to see if any of the values returned false
+            if (TrueTest == true) {
+                filtered.push(item);
+            }
+
+            //VALUE RESET
+            var TrueTest = true;
+            var resetValue = false;
+            //reset the flag variables
+            var isTrue = [];
+            //create an item in the array for each search term
+            angular.forEach(searchSides, function (side) {
+                isTrue.push(resetValue);
+                //console.log("Variable", isTrue[l])
+            });
+
+        });
+    };
+    return filtered;
+};
+
+});
+
 
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {

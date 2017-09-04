@@ -119,7 +119,7 @@
             <h1>{{ purpose }}</h1>
 
 
-            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | sideIsSimple:sidesSelection" class="col-md-6">
+            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | sideIsComplex:sidesSelection:checkboxModel.OnlySides" class="col-md-6">
                 <!--<div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | sideIs:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">-->
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">
