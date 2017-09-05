@@ -462,7 +462,7 @@ app.filter('sideIsComplex', function () {
             angular.forEach(searchSides, function(side) {
                 var escaped = side.replace(/[^\w\s]/g, "\\$&");
                 var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
-                if(stringMatch.test(item.sides)) {
+                if(item.has_die == true && stringMatch.test(item.sides)) {
                     isTrue = true;
                 }
             });
@@ -476,7 +476,7 @@ app.filter('sideIsComplex', function () {
     else {
         //console.log("checkbox = " + checkboxValue);
         //set the starter flag value
-        var TrueTest = true;
+        var TrueTest = false;
         var resetValue = false;
         //reset the flag variables
         var isTrue = [];
@@ -486,19 +486,20 @@ app.filter('sideIsComplex', function () {
 
         });
 
-        //console.log("isTrue array = " + isTrue);
+        //console.log("isTrue array length = " + isTrue.length);
 
         //console.log("isTrue Array = " + isTrue);
 
 
-
-
         angular.forEach(items, function (item) {
             angular.forEach(searchSides, function (side, indexKey) {
+                //console.log("indexKey = " + indexKey);
                  //this replaces any character that is not(^) alphanumeric(\w) or whitespace(\s) with "\\" - The "$&" make's it work for all matches
                 var escaped = side.replace(/[^\w\s]/g, "\\$&");
                 var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
-                if (stringMatch.test(item.sides)) {
+                //console.log("stringMatch = " + stringMatch);
+                if (item.has_die == true && stringMatch.test(item.sides) == true) {
+                    TrueTest = true;
                     //var idx = side.indexOf(side);
                     //console.log("index = " + indexKey);
                     isTrue[indexKey] = true;
@@ -508,6 +509,7 @@ app.filter('sideIsComplex', function () {
 
             //now go through the array and check for any false returns
             angular.forEach(isTrue, function (truth) {
+                console.log("Result = " + truth);
                 if (truth == false) {
                     TrueTest = false;
                 }
@@ -519,7 +521,7 @@ app.filter('sideIsComplex', function () {
             }
 
             //VALUE RESET
-            TrueTest = true;
+            TrueTest = false;
             //create an item in the array for each search term
             angular.forEach(isTrue, function (truth) {
                 truth = resetValue;
