@@ -452,8 +452,9 @@ console.log("filtered = " + filtered);
 });
 
 app.filter('sideIsComplex', function () {
-  return function (items, searchSides, checkboxValue) {
-      //console.log("sides var = " + dieSwitch);
+  return function (items, searchSides, checkboxValue, dieSwitch) {
+      console.log("sides var = " + dieSwitch);
+    if (dieSwitch == true)  {
     var filtered = [];
 
     if (checkboxValue == false) {
@@ -562,6 +563,13 @@ app.filter('sideIsComplex', function () {
         });
     };
     return filtered;
+  }
+
+    else {
+        filtered = items;
+        return filtered;
+    };
+
 };
 
 });
