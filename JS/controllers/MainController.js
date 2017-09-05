@@ -1,3 +1,196 @@
+app.controller('MainController', ['$scope', '$http', function($scope, $http) {
+
+    $http.get('js/card-list.json')
+       .then(function(response) {
+        //First function handles success
+        $scope.cardlist = response.data;
+    }, function(response) {
+        //Second function handles error
+        $scope.errorHandlerReturn = "Something went wrong";
+    });
+
+  $scope.purpose = 'Discard';
+  $scope.promo = 'The most popular books this month.';
+  $scope.products = [
+  	{
+    	name: 'The Book of Trees',
+    	price: 19,
+    	pubdate: new Date('2014', '03', '08'),
+    	cover: 'img/the-book-of-trees.jpg',
+    	likes: 0,
+    	dislikes: 0
+  	},
+  	{
+    	name: 'Program or be Programmed',
+    	price: 8,
+    	pubdate: new Date('2013', '08', '01'),
+    	cover: 'img/program-or-be-programmed.jpg',
+    	likes: 0,
+    	dislikes: 0
+  	},
+  	{
+    	name: 'Harry Potter & The Prisoner of Azkaban',
+    	price: 11.99,
+    	pubdate: new Date('1999', '07', '08'),
+    	cover: 'http://upload.wikimedia.org/wikipedia/en/b/b4/Harry_Potter_and_the_Prisoner_of_Azkaban_(US_cover).jpg',
+    	likes: 0,
+    	dislikes: 0
+  	},
+  	{
+    	name: 'Ready Player One',
+    	price: 7.99,
+    	pubdate: new Date('2011', '08', '16'),
+    	cover: 'http://upload.wikimedia.org/wikipedia/en/a/a4/Ready_Player_One_cover.jpg',
+    	likes: 0,
+    	dislikes: 0
+  	}
+  ];
+  $scope.plusOne = function(index) {
+  	$scope.products[index].likes += 1;
+	};
+	$scope.minusOne = function(index) {
+  	$scope.products[index].dislikes += 1;
+	};
+
+// Affiliation Toggle filter---------------------------------
+
+  // Fruits
+  $scope.affiliations = ['Hero', 'Neutral', 'Villain'];
+
+  // Selected fruits
+  $scope.selection = ['Hero', 'Neutral'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleSelection = function toggleSelection(affiliationName) {
+    var idx = $scope.selection.indexOf(affiliationName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.selection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.selection.push(affiliationName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Type Toggle filter---------------------------------
+
+  // Fruits
+  $scope.types = ['Battlefield', 'Character', 'Event', 'Support', 'Upgrade' ];
+
+  // Selected fruits
+  $scope.typesSelection = ['Battlefield', 'Character'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleTypesSelection = function toggleTypesSelection(typeName) {
+    var idx = $scope.typesSelection.indexOf(typeName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.typesSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.typesSelection.push(typeName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Colour Toggle filter---------------------------------
+
+  // Fruits
+  $scope.colours = ['Red', 'Blue', 'Yellow', 'Gray'];
+
+  // Selected fruits
+  $scope.coloursSelection = ['Red', 'Blue', 'Gray'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleColoursSelection = function toggleColoursSelection(colourName) {
+    var idx = $scope.coloursSelection.indexOf(colourName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.coloursSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.coloursSelection.push(colourName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+// Dice Toggle filter---------------------------------
+
+  // Fruits
+  $scope.dieSides = [
+            "RD",//Ranged Dmage
+            "MD",//Melee Damage
+            "F",//Focus
+            "Dc",//Discard
+            "Dr",//Disrupt
+            "Sh",//Shield
+            "R",//Resource
+            "Sp",//Special
+            "-",//Blank
+            "+"//Modified
+        ];
+
+  // Selected fruits
+  $scope.sidesSelection = [
+            //"RD",//Ranged Dmage
+            "+"
+        ];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleSidesSelection = function toggleSidesSelection(sideName) {
+    var idx = $scope.sidesSelection.indexOf(sideName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.sidesSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.sidesSelection.push(sideName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+//set the values up for passing checkboxes
+    $scope.checkboxModel = {
+       OnlySides : false,
+       DieSidesOnOff : true
+     };
+
+
+
+
+
+
+}]);
+
+
+
 app.filter('nameContains', function () {
   return function (items, searchString) {
     var filtered = [];
@@ -290,8 +483,10 @@ app.filter('sideIsComplex', function () {
         //create an item in the array for each search term
         angular.forEach(searchSides, function (side) {
             isTrue.push(resetValue);
-            //console.log("Stop 1");
+
         });
+
+        //console.log("isTrue array = " + isTrue);
 
         //console.log("isTrue Array = " + isTrue);
 
@@ -299,16 +494,17 @@ app.filter('sideIsComplex', function () {
 
 
         angular.forEach(items, function (item) {
-            angular.forEach(searchSides, function (side) {
+            angular.forEach(searchSides, function (side, indexKey) {
+                 //this replaces any character that is not(^) alphanumeric(\w) or whitespace(\s) with "\\" - The "$&" make's it work for all matches
                 var escaped = side.replace(/[^\w\s]/g, "\\$&");
                 var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
                 if (stringMatch.test(item.sides)) {
-                    var idx = side.indexOf(side);
-                    console.log("idx = " + idx);
-                    isTrue[side] = true;
+                    //var idx = side.indexOf(side);
+                    //console.log("index = " + indexKey);
+                    isTrue[indexKey] = true;
                 }
             });
-
+//console.log("TEST");
 
             //now go through the array and check for any false returns
             angular.forEach(isTrue, function (truth) {
@@ -323,14 +519,10 @@ app.filter('sideIsComplex', function () {
             }
 
             //VALUE RESET
-            var TrueTest = true;
-            var resetValue = false;
-            //reset the flag variables
-            var isTrue = [];
+            TrueTest = true;
             //create an item in the array for each search term
-            angular.forEach(searchSides, function (side) {
-                isTrue.push(resetValue);
-                //console.log("Variable", isTrue[l])
+            angular.forEach(isTrue, function (truth) {
+                truth = resetValue;
             });
 
         });
@@ -342,196 +534,7 @@ app.filter('sideIsComplex', function () {
 
 
 
-app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
-    $http.get('js/card-list.json')
-       .then(function(response) {
-        //First function handles success
-        $scope.cardlist = response.data;
-    }, function(response) {
-        //Second function handles error
-        $scope.errorHandlerReturn = "Something went wrong";
-    });
-
-  $scope.purpose = 'Discard';
-  $scope.promo = 'The most popular books this month.';
-  $scope.products = [
-  	{
-    	name: 'The Book of Trees',
-    	price: 19,
-    	pubdate: new Date('2014', '03', '08'),
-    	cover: 'img/the-book-of-trees.jpg',
-    	likes: 0,
-    	dislikes: 0
-  	},
-  	{
-    	name: 'Program or be Programmed',
-    	price: 8,
-    	pubdate: new Date('2013', '08', '01'),
-    	cover: 'img/program-or-be-programmed.jpg',
-    	likes: 0,
-    	dislikes: 0
-  	},
-  	{
-    	name: 'Harry Potter & The Prisoner of Azkaban',
-    	price: 11.99,
-    	pubdate: new Date('1999', '07', '08'),
-    	cover: 'http://upload.wikimedia.org/wikipedia/en/b/b4/Harry_Potter_and_the_Prisoner_of_Azkaban_(US_cover).jpg',
-    	likes: 0,
-    	dislikes: 0
-  	},
-  	{
-    	name: 'Ready Player One',
-    	price: 7.99,
-    	pubdate: new Date('2011', '08', '16'),
-    	cover: 'http://upload.wikimedia.org/wikipedia/en/a/a4/Ready_Player_One_cover.jpg',
-    	likes: 0,
-    	dislikes: 0
-  	}
-  ];
-  $scope.plusOne = function(index) {
-  	$scope.products[index].likes += 1;
-	};
-	$scope.minusOne = function(index) {
-  	$scope.products[index].dislikes += 1;
-	};
-
-// Affiliation Toggle filter---------------------------------
-
-  // Fruits
-  $scope.affiliations = ['Hero', 'Neutral', 'Villain'];
-
-  // Selected fruits
-  $scope.selection = ['Hero', 'Neutral'];
-
-  // Toggle selection for a given fruit by name
-  $scope.toggleSelection = function toggleSelection(affiliationName) {
-    var idx = $scope.selection.indexOf(affiliationName);
-
-    // Is currently selected
-    if (idx > -1) {
-      $scope.selection.splice(idx, 1);
-    }
-
-    // Is newly selected
-    else {
-      $scope.selection.push(affiliationName);
-        $scope.setObject = function(newValue) {
-        $scope.objectValue.data = newValue;
-        sharedProperties.setObject(newValue);
-        };
-    }
-  };
-
-// Type Toggle filter---------------------------------
-
-  // Fruits
-  $scope.types = ['Battlefield', 'Character', 'Event', 'Support', 'Upgrade' ];
-
-  // Selected fruits
-  $scope.typesSelection = ['Battlefield', 'Character'];
-
-  // Toggle selection for a given fruit by name
-  $scope.toggleTypesSelection = function toggleTypesSelection(typeName) {
-    var idx = $scope.typesSelection.indexOf(typeName);
-
-    // Is currently selected
-    if (idx > -1) {
-      $scope.typesSelection.splice(idx, 1);
-    }
-
-    // Is newly selected
-    else {
-      $scope.typesSelection.push(typeName);
-        $scope.setObject = function(newValue) {
-        $scope.objectValue.data = newValue;
-        sharedProperties.setObject(newValue);
-        };
-    }
-  };
-
-// Colour Toggle filter---------------------------------
-
-  // Fruits
-  $scope.colours = ['Red', 'Blue', 'Yellow', 'Gray'];
-
-  // Selected fruits
-  $scope.coloursSelection = ['Red', 'Blue', 'Gray'];
-
-  // Toggle selection for a given fruit by name
-  $scope.toggleColoursSelection = function toggleColoursSelection(colourName) {
-    var idx = $scope.coloursSelection.indexOf(colourName);
-
-    // Is currently selected
-    if (idx > -1) {
-      $scope.coloursSelection.splice(idx, 1);
-    }
-
-    // Is newly selected
-    else {
-      $scope.coloursSelection.push(colourName);
-        $scope.setObject = function(newValue) {
-        $scope.objectValue.data = newValue;
-        sharedProperties.setObject(newValue);
-        };
-    }
-  };
-
-
-// Dice Toggle filter---------------------------------
-
-  // Fruits
-  $scope.dieSides = [
-            "RD",//Ranged Dmage
-            "MD",//Melee Damage
-            "F",//Focus
-            "Dc",//Discard
-            "Dr",//Disrupt
-            "Sh",//Shield
-            "R",//Resource
-            "Sp",//Special
-            "-",//Blank
-            "+"//Modified
-        ];
-
-  // Selected fruits
-  $scope.sidesSelection = [
-            //"RD",//Ranged Dmage
-            "+"
-        ];
-
-  // Toggle selection for a given fruit by name
-  $scope.toggleSidesSelection = function toggleSidesSelection(sideName) {
-    var idx = $scope.sidesSelection.indexOf(sideName);
-
-    // Is currently selected
-    if (idx > -1) {
-      $scope.sidesSelection.splice(idx, 1);
-    }
-
-    // Is newly selected
-    else {
-      $scope.sidesSelection.push(sideName);
-        $scope.setObject = function(newValue) {
-        $scope.objectValue.data = newValue;
-        sharedProperties.setObject(newValue);
-        };
-    }
-  };
-
-
-//set the values up for passing checkboxes
-    $scope.checkboxModel = {
-       OnlySides : false,
-       DieSidesOnOff : true
-     };
-
-
-
-
-
-
-}]);
 
 
 
