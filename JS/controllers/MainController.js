@@ -479,10 +479,12 @@ app.filter('sideIsComplex', function () {
         var TrueTest = false;
         var resetValue = false;
         //reset the flag variables
-        var isTrue = [];
+        var isTrueA = [];
+        var escaped = " ";
+        var stringMatch = " ";
         //create an item in the array for each search term
         angular.forEach(searchSides, function (side) {
-            isTrue.push(resetValue);
+            isTrueA.push(resetValue);
 
         });
 
@@ -492,40 +494,70 @@ app.filter('sideIsComplex', function () {
 
 
         angular.forEach(items, function (item) {
-            angular.forEach(searchSides, function (side, indexKey) {
+            angular.forEach(searchSides, function (sSides, indexKey) {
                 //console.log("indexKey = " + indexKey);
                  //this replaces any character that is not(^) alphanumeric(\w) or whitespace(\s) with "\\" - The "$&" make's it work for all matches
-                var escaped = side.replace(/[^\w\s]/g, "\\$&");
-                var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                escaped = sSides.replace(/[^\w\s]/g, "\\$&");
+                stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
                 //console.log("stringMatch = " + stringMatch);
-                if (item.has_die == true && stringMatch.test(item.sides) == true) {
-                    TrueTest = true;
-                    //var idx = side.indexOf(side);
-                    //console.log("index = " + indexKey);
-                    isTrue[indexKey] = true;
+                if (item.has_die == true) {
+
+                    angular.forEach(item.sides, function (side) {
+                        if (stringMatch.test(side) == true) {
+                            //TrueTest = true;
+                            //var idx = side.indexOf(side);
+                            //console.log("index = " + indexKey);
+                            isTrueA[indexKey] = true;
+                        }
+                    });
                 }
             });
 //console.log("TEST");
 
-            //now go through the array and check for any false returns
+
+
+
+
+             if (isTrueA.every(function (truth) {
+                    //console.log("Result = " + truth);
+                    return truth == true;
+                    })
+                 ) {
+
+                 console.log("This card matches all the sides! " + isTrueA);
+                 filtered.push(item);
+             }
+
+
+
+
+
+            /*//now go through the array and check for any false returns
             angular.forEach(isTrue, function (truth) {
                 console.log("Result = " + truth);
                 if (truth == false) {
                     TrueTest = false;
                 }
-            });
+            });*/
 
             //final test to see if any of the values returned false
-            if (TrueTest == true) {
+            /*if (TrueTest == true) {
                 filtered.push(item);
-            }
+            }*/
 
             //VALUE RESET
             TrueTest = false;
             //create an item in the array for each search term
-            angular.forEach(isTrue, function (truth) {
-                truth = resetValue;
-            });
+            /*angular.forEach(isTrueA, function (truth) {
+                truth = false;
+            });*/
+
+            for (var n = 0; n < searchSides.length; n++){
+            isTrueA[n] = resetValue;
+            //console.log("Variable", isTrue[l])
+            }
+
+            console.log("isTrueA = " + isTrueA);
 
         });
     };
