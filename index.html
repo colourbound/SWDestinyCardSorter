@@ -94,7 +94,8 @@
                   > <strong>{{sideName}}</strong>
                 </label>
             </div>
-            <div class="col-sm-6" style="margin-bottom:10px">
+
+            <div class="col-sm-2" style="margin-bottom:10px">
                 <label class="btn btn-default btn-sm">
                   <input
                     type="checkbox"
@@ -104,7 +105,7 @@
                   > <strong>All These Sides</strong>
                 </label>
             </div>
-            <div class="col-sm-6" style="margin-bottom:10px">
+            <div class="col-sm-2" style="margin-bottom:10px">
                 <label class="btn btn-default btn-sm">
                   <input
                     type="checkbox"
@@ -114,12 +115,24 @@
                   > <strong>Search Die Sides</strong>
                 </label>
             </div>
+            <div class="col-sm-2" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm">
+                  <input
+                    type="checkbox"
+                    name="Only Resource Costed"
+                    value="Only Resource Costed"
+                    ng-model="checkboxModel.ResourceCosted"
+                  > <strong>Only Resource Costed</strong>
+                </label>
+            </div>
+
+
 
 
             <h1>{{ purpose }}</h1>
 
 
-            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | sideIsComplex:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">
+            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | sideIsComplex:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">
                 <!--<div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | sideIs:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">-->
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">

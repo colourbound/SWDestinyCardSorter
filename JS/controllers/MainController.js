@@ -179,11 +179,13 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 //set the values up for passing checkboxes
     $scope.checkboxModel = {
        OnlySides : false,
-       DieSidesOnOff : true
+       DieSidesOnOff : true,
+       ResourceCosted : true
      };
 
 
-
+console.log("DieSidesOnOff = " + $scope.checkboxModel.DieSidesOnOff);
+console.log("ResourceCosted = " + $scope.checkboxModel.ResourceCosted);
 
 
 
@@ -453,7 +455,7 @@ console.log("filtered = " + filtered);
 
 app.filter('sideIsComplex', function () {
   return function (items, searchSides, checkboxValue, dieSwitch) {
-      console.log("sides var = " + dieSwitch);
+      //console.log("sides var = " + dieSwitch);
     if (dieSwitch == true)  {
     var filtered = [];
 
@@ -572,6 +574,39 @@ app.filter('sideIsComplex', function () {
 
 };
 
+});
+
+app.filter('resourceCostedIs', function () {
+  return function (items, resourceSwitch) {
+    var filtered = [];
+    console.log("resourceSwitch = " + resourceSwitch);
+
+    if (resourceSwitch == true)  {
+        console.log("Switch is true");
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(item.sides, function(side) {
+                var lastChar = side.slice(-1);
+                console.log("lastChar = " + lastChar);
+                if (item.has_die == true && !isNaN(lastChar) == true) {
+                    isTrue = true;
+                }
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+   return filtered;
+  }
+
+  else {
+        filtered = items;
+        return filtered;
+    };
+
+
+  };
 });
 
 
