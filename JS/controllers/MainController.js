@@ -188,9 +188,9 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
     $scope.dropdownOperators = {
         availableOptions: [
-          {id: '1', name: '='},
-          {id: '2', name: '<'},
-          {id: '3', name: '>'}
+          {id: '1', name: '>='},
+          {id: '2', name: '<='},
+          {id: '3', name: '='}
         ],
         selectedOption: {id: '1', name: '='} //This sets the default value of the select in the ui
     };
@@ -637,35 +637,32 @@ app.filter('sideIsComplexSideValue', function () {
                         var firstChar = parseInt(DSide.slice(0));//get the first character in a string
                         //console.log("SWITCH " + firstChar + ", " + dieValue);
                         //console.log("selectedOption ID = " + selectedOption.id);
-                        var selectedOptionID = selectedOption.id;
-
-
 
                         switch (selectedOption.id) {
                                 //=
                                 case "1":
-                                    console.log("Case 1");
-                                    if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                                    //console.log("Case 1");
+                                    if (stringMatch.test(DSide) == true && firstChar >= dieValue) {
                                         isTrue = true;
-                                        //break;
+                                        matchCount++;
                                         }
                                     break;
 
                                 //<
                                 case "2":
-                                    console.log("Case 2");
-                                    if (stringMatch.test(DSide) == true && firstChar < dieValue) {
+                                    //console.log("Case 2");
+                                    if (stringMatch.test(DSide) == true && firstChar <= dieValue) {
                                         isTrue = true;
-                                        //break;
+                                        matchCount++;
                                         }
                                     break;
 
                                 //>
                                 case "3":
-                                    console.log("Case 3");
-                                    if (stringMatch.test(DSide) == true && firstChar > dieValue) {
+                                    //console.log("Case 3");
+                                    if (stringMatch.test(DSide) == true && firstChar == dieValue) {
                                         isTrue = true;
-                                        //break;
+                                        matchCount++;
                                         }
                                     break;
                                 default:
@@ -699,7 +696,7 @@ app.filter('sideIsComplexSideValue', function () {
             if (isTrue == true && matchCount >= dieSideCount) {
                 filtered.push(item);
                 }
-            //console.log("matchCount = " + matchCount + ", dieSideCount = " + dieSideCount);
+            console.log("matchCount = " + matchCount + ", dieSideCount = " + dieSideCount);
             isTrue = false;
             matchCount = 0;
         });
