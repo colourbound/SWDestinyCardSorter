@@ -180,12 +180,24 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     $scope.checkboxModel = {
        OnlySides : false,
        DieSidesOnOff : true,
-       ResourceCosted : true
+       ResourceCosted : false
      };
 
+    //define toggle variables
+    //$scope.dropdownNames = ["=", "<", ">"];
 
-console.log("DieSidesOnOff = " + $scope.checkboxModel.DieSidesOnOff);
-console.log("ResourceCosted = " + $scope.checkboxModel.ResourceCosted);
+    $scope.dropdownOperators = {
+        availableOptions: [
+          {id: '1', name: '='},
+          {id: '2', name: '<'},
+          {id: '3', name: '>'}
+        ],
+        selectedOption: {id: '1', name: '='} //This sets the default value of the select in the ui
+    };
+
+
+//console.log("DieSidesOnOff = " + $scope.checkboxModel.DieSidesOnOff);
+//console.log("ResourceCosted = " + $scope.checkboxModel.ResourceCosted);
 
 
 
@@ -576,21 +588,253 @@ app.filter('sideIsComplex', function () {
 
 });
 
+app.filter('sideIsComplexSideValue', function () {
+  return function (items, searchSides, checkboxValue, dieSwitch, selectedOption, dieValue) {
+      //console.log("sides var = " + dieSwitch);
+    if (dieSwitch == true)  {
+    var filtered = [];
+
+//-------------------------------------------------
+
+
+    if (checkboxValue == false && undefined == dieValue) {
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(searchSides, function(side) {
+                var escaped = side.replace(/[^\w\s]/g, "\\$&");
+                var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                if(item.has_die == true && stringMatch.test(item.sides)) {
+                    isTrue = true;
+                }
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+    }
+
+
+//-------------------------------------------------
+
+
+    else if (checkboxValue == false && undefined !== dieValue) { // && dieValue.length for string version
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(searchSides, function(side) {
+
+                var escaped = side.replace(/[^\w\s]/g, "\\$&");//make the weird characters passable
+                var stringMatch = new RegExp(escaped, 'i'); //create the non-case sensitive regexp
+
+                if (item.has_die == true) {
+                    angular.forEach(item.sides, function (DSide) {
+                        var firstChar = parseInt(DSide.slice(0));//get the first character in a string
+                        console.log("SWITCH " + firstChar + ", " + dieValue);
+
+                        if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                            isTrue = true;
+                        }
+                    });
+                }
+
+                /*if(item.has_die == true && stringMatch.test(item.sides) && firstChar == parseInt(dieValue)) {
+                    isTrue = true;
+                }*/
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+    }
+
+
+        //var firstChar = side.slice(1);
+        //!isNaN(firstChar) == true
+
+
+
+            /*else if (checkboxValue == false && undefined !== dieValue && dieValue.length) {
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(searchSides, function(side) {
+                var firstChar = side.slice(1);//get the first character in a string
+                var escaped = side.replace(/[^\w\s]/g, "\\$&");//make the weird characters passable
+                var stringMatch = new RegExp(escaped, 'i'); //create the non-case sensitive regexp
+                //console.log("SWITCH " + firstChar + ", " + dieValue);
+
+
+
+                if(item.has_die == true && stringMatch.test(item.sides) && firstChar == parseInt(dieValue)) {
+                    isTrue = true;
+                }
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+    }*/
+
+
+
+//-------------------------------------------------
+
+
+    else if (checkboxValue == true && undefined == dieValue) {
+        //console.log("checkbox = " + checkboxValue);
+        //set the starter flag value
+        var TrueTest = false;
+        var resetValue = false;
+        //reset the flag variables
+        var isTrueA = [];
+        var escaped = " ";
+        var stringMatch = " ";
+        //create an item in the array for each search term
+        angular.forEach(searchSides, function (side) {
+            isTrueA.push(resetValue);
+
+        });
+
+        //console.log("isTrue array length = " + isTrue.length);
+
+        //console.log("isTrue Array = " + isTrue);
+
+
+        angular.forEach(items, function (item) {
+            angular.forEach(searchSides, function (sSides, indexKey) {
+                //console.log("indexKey = " + indexKey);
+                 //this replaces any character that is not(^) alphanumeric(\w) or whitespace(\s) with "\\" - The "$&" make's it work for all matches
+                escaped = sSides.replace(/[^\w\s]/g, "\\$&");
+                stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                //console.log("stringMatch = " + stringMatch);
+                if (item.has_die == true) {
+
+                    angular.forEach(item.sides, function (side) {
+                        if (stringMatch.test(side) == true) {
+                            //TrueTest = true;
+                            //var idx = side.indexOf(side);
+                            //console.log("index = " + indexKey);
+                            isTrueA[indexKey] = true;
+                        }
+                    });
+                }
+            });
+//console.log("TEST");
+
+
+
+
+
+             if (isTrueA.every(function (truth) {
+                    //console.log("Result = " + truth);
+                    return truth == true;
+                    })
+                 ) {
+
+                 console.log("This card matches all the sides! " + isTrueA);
+                 filtered.push(item);
+             }
+
+
+
+
+
+            /*//now go through the array and check for any false returns
+            angular.forEach(isTrue, function (truth) {
+                console.log("Result = " + truth);
+                if (truth == false) {
+                    TrueTest = false;
+                }
+            });*/
+
+            //final test to see if any of the values returned false
+            /*if (TrueTest == true) {
+                filtered.push(item);
+            }*/
+
+            //VALUE RESET
+            TrueTest = false;
+            //create an item in the array for each search term
+            /*angular.forEach(isTrueA, function (truth) {
+                truth = false;
+            });*/
+
+            for (var n = 0; n < searchSides.length; n++){
+            isTrueA[n] = resetValue;
+            //console.log("Variable", isTrue[l])
+            }
+
+            console.log("isTrueA = " + isTrueA);
+
+        });
+    };
+    return filtered;
+  }
+
+    else {
+        filtered = items;
+        return filtered;
+    };
+
+};
+
+});
+
 app.filter('resourceCostedIs', function () {
   return function (items, resourceSwitch) {
     var filtered = [];
-    console.log("resourceSwitch = " + resourceSwitch);
+    //console.log("resourceSwitch = " + resourceSwitch);
 
     if (resourceSwitch == true)  {
-        console.log("Switch is true");
+        //console.log("Switch is true");
         var isTrue = false;
         angular.forEach(items, function(item) {
             angular.forEach(item.sides, function(side) {
                 var lastChar = side.slice(-1);
-                console.log("lastChar = " + lastChar);
+                //console.log("lastChar = " + lastChar);
                 if (item.has_die == true && !isNaN(lastChar) == true) {
                     isTrue = true;
                 }
+            });
+            if (isTrue == true) {
+                filtered.push(item);
+                }
+              var isTrue = false;
+        });
+   return filtered;
+  }
+
+  else {
+        filtered = items;
+        return filtered;
+    };
+
+
+  };
+});
+
+app.filter('dieValueIs', function () {
+  return function (items, selectedOption, dieValue) {
+    var filtered = [];
+    console.log("selectedOption = " + selectedOption.name);
+
+    if (undefined !== dieValue && dieValue.length)  {
+        //console.log("Switch is true");
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(item.sides, function(side) {
+                var firstChar = side.slice(1);//maybe should be 0?
+                //console.log("lastChar = " + lastChar);
+
+                if (selectedOption.id == 1) {
+                    if (item.has_die == true && !isNaN(firstChar) == true) {
+                        isTrue = true;
+                    }
+                }
+
+
+
             });
             if (isTrue == true) {
                 filtered.push(item);
