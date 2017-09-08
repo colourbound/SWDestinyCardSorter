@@ -137,6 +137,11 @@
 
 
 
+            <span>Has at least </span>
+            <input type="number" name="side-quantity" ng-init="dieSideCount = 1" min="1" max="6" ng-model="dieSideCount" placeholder="1">
+            <span> of the selected die sides {{ dieSideCount }} test</span>
+
+
 
 
 
@@ -145,7 +150,7 @@
             <h1>{{ purpose }}</h1>
 
 
-            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput" class="col-md-6">
+            <div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount" class="col-md-6">
                 <!--<div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | dieValueIs:dropdownOperators.selectedOption:dieValueInput | sideIsComplex:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">-->
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">

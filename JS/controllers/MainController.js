@@ -589,8 +589,13 @@ app.filter('sideIsComplex', function () {
 });
 
 app.filter('sideIsComplexSideValue', function () {
-  return function (items, searchSides, checkboxValue, dieSwitch, selectedOption, dieValue) {
+  return function (items, searchSides, checkboxValue, dieSwitch, selectedOption, dieValue, dieSideCount) {
       //console.log("sides var = " + dieSwitch);
+    /*if (undefined == dieSideCount)  {
+        dieSideCount = 1;
+    }*/
+    //console.log("dieSideCount = " + dieSideCount);
+
     if (dieSwitch == true)  {
     var filtered = [];
 
@@ -620,6 +625,7 @@ app.filter('sideIsComplexSideValue', function () {
 
     else if (checkboxValue == false && undefined !== dieValue) { // && dieValue.length for string version
         var isTrue = false;
+        var matchCount = 0;
         angular.forEach(items, function(item) {
             angular.forEach(searchSides, function(side) {
 
@@ -629,11 +635,54 @@ app.filter('sideIsComplexSideValue', function () {
                 if (item.has_die == true) {
                     angular.forEach(item.sides, function (DSide) {
                         var firstChar = parseInt(DSide.slice(0));//get the first character in a string
-                        console.log("SWITCH " + firstChar + ", " + dieValue);
+                        //console.log("SWITCH " + firstChar + ", " + dieValue);
+                        //console.log("selectedOption ID = " + selectedOption.id);
+                        var selectedOptionID = selectedOption.id;
 
-                        if (stringMatch.test(DSide) == true && firstChar == dieValue) {
-                            isTrue = true;
+
+
+                        switch (selectedOption.id) {
+                                //=
+                                case "1":
+                                    console.log("Case 1");
+                                    if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                                        isTrue = true;
+                                        //break;
+                                        }
+                                    break;
+
+                                //<
+                                case "2":
+                                    console.log("Case 2");
+                                    if (stringMatch.test(DSide) == true && firstChar < dieValue) {
+                                        isTrue = true;
+                                        //break;
+                                        }
+                                    break;
+
+                                //>
+                                case "3":
+                                    console.log("Case 3");
+                                    if (stringMatch.test(DSide) == true && firstChar > dieValue) {
+                                        isTrue = true;
+                                        //break;
+                                        }
+                                    break;
+                                default:
+                                    console.log("FAILED SWITCH " + selectedOption.id);
+
+                                    /*if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                                        isTrue = true;
+                                        matchCount++;
+                                        }*/
+
                         }
+
+                            /*if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                                isTrue = true;
+                            }*/
+
+
                     });
                 }
 
@@ -641,10 +690,18 @@ app.filter('sideIsComplexSideValue', function () {
                     isTrue = true;
                 }*/
             });
-            if (isTrue == true) {
+
+            if (matchCount == 0) {
+                matchCount = 1;
+            }
+
+
+            if (isTrue == true && matchCount >= dieSideCount) {
                 filtered.push(item);
                 }
-              var isTrue = false;
+            //console.log("matchCount = " + matchCount + ", dieSideCount = " + dieSideCount);
+            isTrue = false;
+            matchCount = 0;
         });
     }
 
