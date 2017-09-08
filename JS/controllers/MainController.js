@@ -604,18 +604,36 @@ app.filter('sideIsComplexSideValue', function () {
 
     if (checkboxValue == false && undefined == dieValue) {
         var isTrue = false;
+        var matchCount = 0;
+
         angular.forEach(items, function(item) {
             angular.forEach(searchSides, function(side) {
                 var escaped = side.replace(/[^\w\s]/g, "\\$&");
                 var stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
-                if(item.has_die == true && stringMatch.test(item.sides)) {
-                    isTrue = true;
+
+
+                if (item.has_die == true) {
+                    angular.forEach(item.sides, function (DSide) {
+
+                        if(stringMatch.test(DSide)) {
+                            isTrue = true;
+                            matchCount++;
+                            console.log("matchCount = " + matchCount);
+                        }
+
+                    });
                 }
             });
-            if (isTrue == true) {
+
+            if (matchCount == 0) {
+                matchCount = 1;
+            }
+
+            if (isTrue == true && matchCount >= dieSideCount) {
                 filtered.push(item);
                 }
-              var isTrue = false;
+            var isTrue = false;
+            matchCount = 0;
         });
     }
 
@@ -639,7 +657,7 @@ app.filter('sideIsComplexSideValue', function () {
                         //console.log("selectedOption ID = " + selectedOption.id);
 
                         switch (selectedOption.id) {
-                                //=
+                                //>=
                                 case "1":
                                     //console.log("Case 1");
                                     if (stringMatch.test(DSide) == true && firstChar >= dieValue) {
@@ -648,7 +666,7 @@ app.filter('sideIsComplexSideValue', function () {
                                         }
                                     break;
 
-                                //<
+                                //<=
                                 case "2":
                                     //console.log("Case 2");
                                     if (stringMatch.test(DSide) == true && firstChar <= dieValue) {
@@ -657,7 +675,7 @@ app.filter('sideIsComplexSideValue', function () {
                                         }
                                     break;
 
-                                //>
+                                //=
                                 case "3":
                                     //console.log("Case 3");
                                     if (stringMatch.test(DSide) == true && firstChar == dieValue) {
@@ -731,8 +749,7 @@ app.filter('sideIsComplexSideValue', function () {
     }*/
 
 
-
-//-------------------------------------------------
+  //-------------------------------------------------
 
 
     else if (checkboxValue == true && undefined == dieValue) {
@@ -740,13 +757,16 @@ app.filter('sideIsComplexSideValue', function () {
         //set the starter flag value
         var TrueTest = false;
         var resetValue = false;
+        var resetMatchValue = 0;
         //reset the flag variables
         var isTrueA = [];
+        var matchCountA = [];
         var escaped = " ";
         var stringMatch = " ";
         //create an item in the array for each search term
         angular.forEach(searchSides, function (side) {
             isTrueA.push(resetValue);
+            matchCountA.push(resetMatchValue);
 
         });
 
@@ -770,12 +790,24 @@ app.filter('sideIsComplexSideValue', function () {
                             //var idx = side.indexOf(side);
                             //console.log("index = " + indexKey);
                             isTrueA[indexKey] = true;
+                            matchCountA[indexKey]++;//increase the count for specific search die term
+                            console.log("matchCountA = " + matchCountA[indexKey]);
                         }
+
+
                     });
                 }
             });
 //console.log("TEST");
 
+
+            //reset any counts if they didn't hit a match - this is accurate
+            angular.forEach(matchCountA, function (matchCount) {
+                if (matchCount == 0) {
+                    matchCount = 1;
+                }
+
+            });
 
 
 
@@ -784,9 +816,16 @@ app.filter('sideIsComplexSideValue', function () {
                     //console.log("Result = " + truth);
                     return truth == true;
                     })
+                 &&
+
+                 matchCountA.every(function (match) {
+                    //console.log("Result = " + truth);
+                    return match >= dieSideCount;
+                    })
+
                  ) {
 
-                 console.log("This card matches all the sides! " + isTrueA);
+                 //console.log("This card matches all the sides! " + isTrueA);
                  filtered.push(item);
              }
 
@@ -815,14 +854,169 @@ app.filter('sideIsComplexSideValue', function () {
             });*/
 
             for (var n = 0; n < searchSides.length; n++){
-            isTrueA[n] = resetValue;
+                isTrueA[n] = resetValue;
+                matchCountA[n] = resetMatchValue;
+
             //console.log("Variable", isTrue[l])
             }
 
-            console.log("isTrueA = " + isTrueA);
+            //console.log("isTrueA = " + isTrueA);
+
+        });
+    }
+
+
+//-------------------------------------------------
+
+
+    else if (checkboxValue == true && undefined !== dieValue) {
+        //console.log("checkbox = " + checkboxValue);
+        //set the starter flag value
+        var TrueTest = false;
+        var resetValue = false;
+        var resetMatchValue = 0;
+        //reset the flag variables
+        var isTrueA = [];
+        var matchCountA = [];
+        var escaped = " ";
+        var stringMatch = " ";
+        //create an item in the array for each search term
+        angular.forEach(searchSides, function (side) {
+            isTrueA.push(resetValue);
+            matchCountA.push(resetMatchValue);
+
+        });
+
+        //console.log("isTrue array length = " + isTrue.length);
+
+        //console.log("isTrue Array = " + isTrue);
+
+
+        angular.forEach(items, function (item) {
+            angular.forEach(searchSides, function (sSides, indexKey) {
+                //console.log("indexKey = " + indexKey);
+                 //this replaces any character that is not(^) alphanumeric(\w) or whitespace(\s) with "\\" - The "$&" make's it work for all matches
+                escaped = sSides.replace(/[^\w\s]/g, "\\$&");
+                stringMatch = new RegExp(escaped, 'i'); //, '0' new RegExp("[" + side + "]", 'i');
+                //console.log("stringMatch = " + stringMatch);
+                if (item.has_die == true) {
+
+                    angular.forEach(item.sides, function (side) {
+                        var firstChar = parseInt(side.slice(0));//get the first character in a string
+                        //console.log("SWITCH " + firstChar + ", " + dieValue);
+                        //console.log("selectedOption ID = " + selectedOption.id);
+
+                        switch (selectedOption.id) {
+                                //>=
+                                case "1":
+                                    if (stringMatch.test(side) == true && firstChar >= dieValue) {
+                                        //TrueTest = true;
+                                        //var idx = side.indexOf(side);
+                                        //console.log("index = " + indexKey);
+                                        isTrueA[indexKey] = true;
+                                        matchCountA[indexKey]++;//increase the count for specific search die term
+                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                    }
+                                    break;
+                                //<=
+                                case "2":
+                                    if (stringMatch.test(side) == true && firstChar <= dieValue) {
+                                        //TrueTest = true;
+                                        //var idx = side.indexOf(side);
+                                        //console.log("index = " + indexKey);
+                                        isTrueA[indexKey] = true;
+                                        matchCountA[indexKey]++;//increase the count for specific search die term
+                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                    }
+                                    break;
+                                //=
+                                case "3":
+                                    if (stringMatch.test(side) == true && firstChar == dieValue) {
+                                        //TrueTest = true;
+                                        //var idx = side.indexOf(side);
+                                        //console.log("index = " + indexKey);
+                                        isTrueA[indexKey] = true;
+                                        matchCountA[indexKey]++;//increase the count for specific search die term
+                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                    }
+                                    break;
+                                default:
+                                    console.log("FAILED SWITCH " + selectedOption.id);
+                        }
+
+
+                    });
+                }
+            });
+//console.log("TEST");
+
+
+            //reset any counts if they didn't hit a match - this is accurate
+            angular.forEach(matchCountA, function (matchCount) {
+                if (matchCount == 0) {
+                    matchCount = 1;
+                }
+
+            });
+
+
+
+
+             if (isTrueA.every(function (truth) {
+                    //console.log("Result = " + truth);
+                    return truth == true;
+                    })
+                 &&
+
+                 matchCountA.every(function (match) {
+                    //console.log("Result = " + truth);
+                    return match >= dieSideCount;
+                    })
+
+                 ) {
+
+                 //console.log("This card matches all the sides! " + isTrueA);
+                 filtered.push(item);
+             }
+
+
+
+
+
+            /*//now go through the array and check for any false returns
+            angular.forEach(isTrue, function (truth) {
+                console.log("Result = " + truth);
+                if (truth == false) {
+                    TrueTest = false;
+                }
+            });*/
+
+            //final test to see if any of the values returned false
+            /*if (TrueTest == true) {
+                filtered.push(item);
+            }*/
+
+            //VALUE RESET
+            TrueTest = false;
+            //create an item in the array for each search term
+            /*angular.forEach(isTrueA, function (truth) {
+                truth = false;
+            });*/
+
+            for (var n = 0; n < searchSides.length; n++){
+                isTrueA[n] = resetValue;
+                matchCountA[n] = resetMatchValue;
+
+            //console.log("Variable", isTrue[l])
+            }
+
+            //console.log("isTrueA = " + isTrueA);
 
         });
     };
+
+
+
     return filtered;
   }
 
