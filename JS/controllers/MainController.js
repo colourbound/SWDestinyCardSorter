@@ -180,8 +180,22 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     $scope.checkboxModel = {
        OnlySides : false,
        DieSidesOnOff : true,
-       ResourceCosted : false
+       ResourceCosted : false,
+       NotResourceCosted : false
      };
+
+
+    $scope.checkboxChange = function() {
+        //if ($scope.checkboxModel.ResourceCosted == false){
+        $scope.checkboxModel.NotResourceCosted = false;
+        //}
+      };
+
+    $scope.checkboxChange2 = function() {
+        //if ($scope.checkboxModel.NotResourceCosted == false){
+        $scope.checkboxModel.ResourceCosted = false;
+        //}
+      };
 
     //define toggle variables
     //$scope.dropdownNames = ["=", "<", ">"];
@@ -194,6 +208,9 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         ],
         selectedOption: {id: '1', name: '='} //This sets the default value of the select in the ui
     };
+
+
+
 
 
 //console.log("DieSidesOnOff = " + $scope.checkboxModel.DieSidesOnOff);
@@ -250,7 +267,7 @@ app.filter('affiliationIs', function () {
       if (isTrue == true) {
                 filtered.push(item);
         }
-      var isTrue = false;
+      isTrue = false;
 
     }
     return filtered;
@@ -273,7 +290,7 @@ app.filter('typeIs', function () {
       if (isTrue == true) {
                 filtered.push(item);
         }
-      var isTrue = false;
+      isTrue = false;
 
     }
     return filtered;
@@ -296,7 +313,7 @@ app.filter('colourIs', function () {
       if (isTrue == true) {
                 filtered.push(item);
         }
-      var isTrue = false;
+      isTrue = false;
 
     }
     return filtered;
@@ -618,7 +635,7 @@ app.filter('sideIsComplexSideValue', function () {
                         if(stringMatch.test(DSide)) {
                             isTrue = true;
                             matchCount++;
-                            console.log("matchCount = " + matchCount);
+                            //console.log("matchCount = " + matchCount);
                         }
 
                     });
@@ -632,7 +649,7 @@ app.filter('sideIsComplexSideValue', function () {
             if (isTrue == true && matchCount >= dieSideCount) {
                 filtered.push(item);
                 }
-            var isTrue = false;
+            isTrue = false;
             matchCount = 0;
         });
     }
@@ -714,7 +731,7 @@ app.filter('sideIsComplexSideValue', function () {
             if (isTrue == true && matchCount >= dieSideCount) {
                 filtered.push(item);
                 }
-            console.log("matchCount = " + matchCount + ", dieSideCount = " + dieSideCount);
+            //console.log("matchCount = " + matchCount + ", dieSideCount = " + dieSideCount);
             isTrue = false;
             matchCount = 0;
         });
@@ -791,7 +808,7 @@ app.filter('sideIsComplexSideValue', function () {
                             //console.log("index = " + indexKey);
                             isTrueA[indexKey] = true;
                             matchCountA[indexKey]++;//increase the count for specific search die term
-                            console.log("matchCountA = " + matchCountA[indexKey]);
+                            //console.log("matchCountA = " + matchCountA[indexKey]);
                         }
 
 
@@ -915,7 +932,7 @@ app.filter('sideIsComplexSideValue', function () {
                                         //console.log("index = " + indexKey);
                                         isTrueA[indexKey] = true;
                                         matchCountA[indexKey]++;//increase the count for specific search die term
-                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                        //console.log("matchCountA = " + matchCountA[indexKey]);
                                     }
                                     break;
                                 //<=
@@ -926,7 +943,7 @@ app.filter('sideIsComplexSideValue', function () {
                                         //console.log("index = " + indexKey);
                                         isTrueA[indexKey] = true;
                                         matchCountA[indexKey]++;//increase the count for specific search die term
-                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                        //console.log("matchCountA = " + matchCountA[indexKey]);
                                     }
                                     break;
                                 //=
@@ -937,7 +954,7 @@ app.filter('sideIsComplexSideValue', function () {
                                         //console.log("index = " + indexKey);
                                         isTrueA[indexKey] = true;
                                         matchCountA[indexKey]++;//increase the count for specific search die term
-                                        console.log("matchCountA = " + matchCountA[indexKey]);
+                                        //console.log("matchCountA = " + matchCountA[indexKey]);
                                     }
                                     break;
                                 default:
@@ -1030,10 +1047,10 @@ app.filter('sideIsComplexSideValue', function () {
 });
 
 app.filter('resourceCostedIs', function () {
-  return function (items, resourceSwitch) {
+  return function (items, resourceSwitch, notResourceSwitch) {
     var filtered = [];
     //console.log("resourceSwitch = " + resourceSwitch);
-
+    //console.log("notResourceSwitch = " + notResourceSwitch);
     if (resourceSwitch == true)  {
         //console.log("Switch is true");
         var isTrue = false;
@@ -1048,7 +1065,27 @@ app.filter('resourceCostedIs', function () {
             if (isTrue == true) {
                 filtered.push(item);
                 }
-              var isTrue = false;
+              isTrue = false;
+        });
+   return filtered;
+  }
+
+  else if (notResourceSwitch == true)  {
+        //console.log("Switch is true");
+        var isTrue = false;
+        angular.forEach(items, function(item) {
+            angular.forEach(item.sides, function(side) {
+                var lastChar = side.slice(-1);
+                //console.log("lastChar = " + lastChar);
+                if (item.has_die == true && !isNaN(lastChar) == true) {
+                    console.log(isTrue + "Side = " + side + "lastChar = " + lastChar);
+                    isTrue = true;
+                }
+            });
+            if (isTrue == false) {
+                filtered.push(item);
+                }
+              isTrue = false;
         });
    return filtered;
   }
@@ -1100,9 +1137,6 @@ app.filter('dieValueIs', function () {
 
   };
 });
-
-
-
 
 
 
