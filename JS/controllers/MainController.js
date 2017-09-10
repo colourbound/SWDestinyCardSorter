@@ -175,6 +175,38 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
   };
 
+// Discard Toggle filter---------------------------------
+
+  // Fruits
+  $scope.discards = ['Card', 'Support', 'Upgrade'];
+
+  // Selected fruits
+  $scope.discardsSelection = ['Card'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDiscardsSelection = function toggleDiscardsSelection(discardName) {
+    var idx = $scope.discardsSelection.indexOf(discardName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.discardsSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.discardsSelection = [];
+      $scope.discardsSelection.push(discardName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+
+
+// ---------------------------------
 
 //set the values up for passing checkboxes
     $scope.checkboxModel = {
@@ -209,6 +241,21 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         selectedOption: {id: '1', name: '='} //This sets the default value of the select in the ui
     };
 
+    $scope.dropdownCardCategory = {
+        availableOptions: [
+          {id: '1', name: 'Discard'},
+          {id: '2', name: 'Dice'},
+          {id: '3', name: 'Shield'},
+          {id: '4', name: 'Keyword'},
+          {id: '5', name: 'Action Cheat'},
+          {id: '6', name: 'Damage'},
+          {id: '7', name: 'Restriction Cheat'},
+          {id: '8', name: 'Damage'},
+          {id: '9', name: 'Shield'}
+        ],
+        selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
+    };
+
 
 
 
@@ -224,31 +271,36 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
 app.filter('nameContains', function () {
   return function (items, searchString) {
+    //console.log("switch");
     var filtered = [];
     var stringMatch = new RegExp(searchString, 'i');
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-      if (stringMatch.test(item.name)) {
-        filtered.push(item);
-      }
+    if (undefined !== items && items.length) {
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          if (stringMatch.test(item.name)) {
+            filtered.push(item);
+          }
+        }
     }
     return filtered;
   };
 });
 
-app.filter('categoryIs', function () {
+/*app.filter('categoryIs', function () {
   return function (items, searchCategory) {
     var filtered = [];
     var stringMatch = new RegExp(searchCategory, 'i');
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-      if (stringMatch.test(item.category)) {
-        filtered.push(item);
-      }
+    if (undefined !== items && items.length) {
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          if (stringMatch.test(item.category)) {
+            filtered.push(item);
+          }
+        }
     }
     return filtered;
   };
-});
+});*/
 
 app.filter('affiliationIs', function () {
   return function (items, searchAffiliation) {

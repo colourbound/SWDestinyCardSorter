@@ -119,8 +119,8 @@
         "label": "General Grievous - Jedi Hunter",
         "cp": 1318,
         "abilityCategory": [
-            "InterruptDefeatedBefore",
-            "UpgradeMove"
+            "Interrupt Defeated Before",
+            "Upgrade Move"
         ]
     },
     {
@@ -162,7 +162,7 @@
         "label": "General Veers - Field Commander",
         "cp": 1114,
         "abilityCategory": [
-            "TurnSupportOwn"
+            "Die Turn Support Own"
         ]
     },
     {
@@ -206,7 +206,7 @@
         "label": "AT-ST",
         "cp": 600,
         "abilityCategory": [
-            "DiscardSupportPlay"
+            "Discard Support Play"
         ]
     },
     {
@@ -251,7 +251,7 @@
         "cp": 300
         ,
         "abilityCategory": [
-            "ShieldRemovalOpponent"
+            "Shield Removal Opponent"
         ]
     },
     {
@@ -295,8 +295,8 @@
         "label": "Commanding Presence",
         "cp": 300,
         "abilityCategory": [
-            "ValueIncreaseOwn",
-            "DieRemovalOpponent"
+            "Value Increase Die Own",
+            "Die Removal Opponent"
         ]
     },
     {
@@ -341,7 +341,7 @@
         "cp": 200,
         "abilityCategory": [
             "Redeploy",
-            "DamageDistributed"
+            "Damage Distributed"
         ]
     },
     {
@@ -383,7 +383,7 @@
         "label": "Count Dooku - Devious Strategist",
         "cp": 1115,
         "abilityCategory": [
-            "ShieldGeneration"
+            "Shield Generation"
         ]
     },
     {
@@ -425,7 +425,7 @@
         "label": "Darth Vader - Sith Lord",
         "cp": 1621,
         "abilityCategory": [
-            "DiscardCardHand"
+            "Discard Card Hand"
         ]
     },
     {
@@ -467,8 +467,8 @@
         "label": "Kylo Ren - Vader's Disciple",
         "cp": 1013,
         "abilityCategory": [
-            "HandPeak",
-            "DamageHandsize"
+            "Hand Peak",
+            "Damage Handsize"
         ]
     },
     {
@@ -510,7 +510,7 @@
         "label": "Nightsister",
         "cp": 800,
         "abilityCategory": [
-            "DieRerollOwn"
+            "Die Reroll Own"
         ]
     },
     {
@@ -554,8 +554,8 @@
         "label": "Force Choke",
         "cp": 200,
         "abilityCategory": [
-            "DamageUnblockable",
-            "DieTurnOpponent"
+            "Damage Unblockable",
+            "Die Turn Opponent"
         ]
     },
     {
@@ -599,7 +599,7 @@
         "label": "Immobilize",
         "cp": 200,
         "abilityCategory": [
-            "DieTurnBlank"
+            "Die Turn Blank"
         ]
     },
     {
@@ -643,8 +643,8 @@
         "label": "Kylo Ren's Lightsaber",
         "cp": 300,
         "abilityCategory": [
-            "DamageNoremove",
-            "DieRerollNoremove"
+            "Damage Noremove",
+            "Die Reroll Noremove"
         ]
     },
     {
@@ -688,7 +688,7 @@
         "label": "Sith Holocron",
         "cp": 0,
         "abilityCategory": [
-            "UpgradeAttachIgnorerestrict"
+            "Upgrade Attach Ignorerestrict"
         ]
     },
     {
@@ -732,7 +732,7 @@
         "label": "Infantry Grenades",
         "cp": 200,
         "abilityCategory": [
-            "DamageDistributed"
+            "Damage Distributed"
         ]
     },
     {
@@ -776,8 +776,8 @@
         "label": "Speeder Bike Scout",
         "cp": 300,
         "abilityCategory": [
-            "DieRemoval",
-            "ActionCheat"
+            "Die Removal",
+            "Action Cheat"
         ]
     },
     {
@@ -819,8 +819,8 @@
         "label": "Bala-Tik - Gang Leader",
         "cp": 811,
         "abilityCategory": [
-            "InterruptDefeatedAfterOpponent",
-            "CharacterReady"
+            "Interrupt Defeated After Opponent",
+            "Character Ready"
         ]
     },
     {
@@ -862,8 +862,8 @@
         "label": "Jabba the Hutt - The Great and Mighty",
         "cp": 1114,
         "abilityCategory": [
-            "InterruptActivateAfterOwn",
-            "DieRerollOwn"
+            "Interrupt Activate After Own",
+            "Die Reroll Own"
         ]
     },
     {
@@ -905,8 +905,8 @@
         "label": "Jango Fett - Lethal Mercenary",
         "cp": 1216,
         "abilityCategory": [
-            "InterruptActivateAfterOpponent",
-            "CharacterActivateOwn"
+            "Interrupt Activate After Opponent",
+            "Character Activate Own"
         ]
     },
     {
@@ -948,9 +948,9 @@
         "label": "Tusken Raider",
         "cp": 900,
         "abilityCategory": [
-            "InterruptActivateAfter",
-            "ActionCheat",
-            "FastHands"
+            "Interrupt Activate After",
+            "Action Cheat",
+            "Fast Hands"
         ]
     },
     {
@@ -994,7 +994,7 @@
         "label": "Crime Lord",
         "cp": 400,
         "abilityCategory": [
-            "CharacterDefeatOpponent"
+            "Character Defeat Opponent"
         ]
     },
     {
@@ -1038,7 +1038,7 @@
         "label": "Flame Thrower",
         "cp": 300,
         "abilityCategory": [
-            "DamageDistributed"
+            "Damage Distributed"
         ]
     },
     {
@@ -1083,7 +1083,7 @@
         "cp": 200,
         "abilityCategory": [
             "Redploy",
-            "DamageUpsize"
+            "Damage Upsize"
         ]
     },
     {
@@ -1127,8 +1127,8 @@
         "label": "On The Hunt",
         "cp": 100,
         "abilityCategory": [
-            "ShieldRemoval",
-            "DieRemoval"
+            "Shield Removal",
+            "Die Removal"
         ]
     },
     {
@@ -1170,8 +1170,8 @@
         "label": "Admiral Ackbar - Perceptive Tactician",
         "cp": 1014,
         "abilityCategory": [
-            "InterruptLastcardAfter",
-            "DamageDistributedIncidental"
+            "Interrupt Lastcard After",
+            "Damage Distributed Incidental"
         ]
     },
     {
@@ -1213,7 +1213,7 @@
         "label": "Leia Organa - Born Leader",
         "cp": 1216,
         "abilityCategory": [
-            "DieRerollOwn"
+            "Die Reroll Own"
         ]
     },
     {
@@ -1255,8 +1255,8 @@
         "label": "Poe Dameron - Ace Pilot",
         "cp": 1418,
         "abilityCategory": [
-            "DieResolve",
-            "PlayfromDiscard"
+            "Die Resolve",
+            "Playfrom Discard"
         ]
     },
     {
@@ -1337,7 +1337,7 @@
         "label": "Launch Bay",
         "cp": 500,
         "abilityCategory": [
-            "DamageHandsize"
+            "Damage Handsize"
         ]
     },
     {
@@ -1381,8 +1381,8 @@
         "label": "Black One",
         "cp": 400,
         "abilityCategory": [
-            "DamageNoremove",
-            "DieReroll"
+            "Damage Noremove",
+            "Die Reroll"
         ]
     },
     {
@@ -1426,8 +1426,8 @@
         "label": "Scout",
         "cp": 100,
         "abilityCategory": [
-            "HandReveal",
-            "DiscardHand"
+            "Hand Reveal",
+            "Discard Hand"
         ]
     },
     {
@@ -1510,8 +1510,8 @@
         "label": "Luke Skywalker - Jedi Knight",
         "cp": 1520,
         "abilityCategory": [
-            "CardDraw",
-            "InterruptActivateAfterOwn"
+            "Card Draw Deck",
+            "Interrupt Activate After Own"
         ]
     },
     {
@@ -1553,7 +1553,7 @@
         "label": "Padawan",
         "cp": 800,
         "abilityCategory": [
-            "UpgradeCostreduce"
+            "Upgrade Costreduce"
         ]
     },
     {
@@ -1595,8 +1595,8 @@
         "label": "Qui-Gon Jinn - Ataru Master",
         "cp": 1317,
         "abilityCategory": [
-            "InterruptShieldBefore",
-            "DamageTrade"
+            "Interrupt Shield Before",
+            "Damage Trade"
         ]
     },
     {
@@ -1638,7 +1638,7 @@
         "label": "Rey - Force Prodigy",
         "cp": 912,
         "abilityCategory": [
-            "ActionCheat"
+            "Action Cheat"
         ]
     },
     {
@@ -1682,7 +1682,7 @@
         "label": "Force Protection",
         "cp": 300,
         "abilityCategory": [
-            "ShieldGenerationDistributed"
+            "Shield Generation Distributed"
         ]
     },
     {
@@ -1726,8 +1726,8 @@
         "label": "Jedi Robes",
         "cp": 200,
         "abilityCategory": [
-            "InterruptPlayAfterOwn",
-            "ShieldGeneration"
+            "Interrupt Play After Own",
+            "Shield Generation"
         ]
     },
     {
@@ -1771,8 +1771,8 @@
         "label": "Luke Skywalker's Lightsaber",
         "cp": 300,
         "abilityCategory": [
-            "ShieldGeneration",
-            "DamageUnblockable"
+            "Shield Generation",
+            "Damage Unblockable"
         ]
     },
     {
@@ -1816,8 +1816,8 @@
         "label": "One With The Force",
         "cp": 400,
         "abilityCategory": [
-            "InterruptDefeatedBefore",
-            "UpgradeTransferSupport"
+            "Interrupt Defeated Before",
+            "Upgrade Transfer Support"
         ]
     },
     {
@@ -1861,8 +1861,8 @@
         "label": "BB-8",
         "cp": 100,
         "abilityCategory": [
-            "DieRerollNoremove",
-            "DieResolveNoremove"
+            "Die Reroll Noremove",
+            "Die Resolve Noremove"
         ]
     },
     {
@@ -1906,7 +1906,7 @@
         "label": "Rey's Staff",
         "cp": 200,
         "abilityCategory": [
-            "DieRemovalMeleeRanged"
+            "Die Removal Melee Ranged"
         ]
     },
     {
@@ -1948,8 +1948,8 @@
         "label": "Finn - First Order Defector",
         "cp": 1316,
         "abilityCategory": [
-            "UpgradeIgnorerestrictWeapon",
-            "DeckCardincludeRedVillainWeaponVehicles"
+            "Upgrade Ignorerestrict Weapon",
+            "Deck Cardinclude Red Villain Weapon Vehicles"
         ]
     },
     {
@@ -1991,8 +1991,8 @@
         "label": "Han Solo - Scoundrel",
         "cp": 1418,
         "abilityCategory": [
-            "InterruptPlayAmbushAfter",
-            "ShieldGeneration"
+            "Interrupt Play Ambush After",
+            "Shield Generation"
         ]
     },
     {
@@ -2073,7 +2073,7 @@
         "label": "Padme Amidala - Queen of Naboo",
         "cp": 1014,
         "abilityCategory": [
-            "DiscardDeck"
+            "Discard Deck"
         ]
     },
     {
@@ -2117,7 +2117,7 @@
         "label": "Millennium Falcon",
         "cp": 500,
         "abilityCategory": [
-            "PlayfromDiscardHandEvent"
+            "Playfrom Discard Hand Event"
         ]
     },
     {
@@ -2161,7 +2161,7 @@
         "label": "Diplomatic Immunity",
         "cp": 400,
         "abilityCategory": [
-            "ShieldDistributed"
+            "Shield Distributed"
         ]
     },
     {
@@ -2206,8 +2206,8 @@
         "cp": 300,
         "abilityCategory": [
             "Ambush",
-            "InterruptPlayUpgradeAfter",
-            "DieRemovalChoice"
+            "Interrupt Play Upgrade After",
+            "Die Removal Choice"
         ]
     },
     {
@@ -2251,7 +2251,7 @@
         "label": "Infiltrate",
         "cp": 100,
         "abilityCategory": [
-            "DieRerollOpponent"
+            "Die Reroll Opponent"
         ]
     },
     {
@@ -2293,8 +2293,7 @@
         "label": "Outpost",
         "cp": 200,
         "abilityCategory": [
-            "Bookmark",
-            "PlayfromDiscard"
+            "Resolve Battlefield"
         ]
     },
     {
@@ -2377,7 +2376,10 @@
         "url": "http://swdestinydb.com/card/01055",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01055.jpg",
         "label": "IQA-11 Blaster Rifle",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Damage Unblockable"
+        ]
     },
     {
         "sides": [
@@ -2418,7 +2420,11 @@
         "url": "http://swdestinydb.com/card/01056",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01056.jpg",
         "label": "Promotion",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Card Draw Deck",
+            "Interrupt Play After This"
+        ]
     },
     {
         "sides": [
@@ -2459,7 +2465,11 @@
         "url": "http://swdestinydb.com/card/01057",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01057.jpg",
         "label": "Force Throw",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Die Removal",
+            "Damage Dievalue"
+        ]
     },
     {
         "sides": [
@@ -2500,7 +2510,11 @@
         "url": "http://swdestinydb.com/card/01058",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01058.jpg",
         "label": "Force Training",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Bookmark",
+            "Damage Trade"
+        ]
     },
     {
         "sides": [
