@@ -162,7 +162,7 @@
 
             <div class="clearfloat"></div>
             <br />
-            <div class="check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Discard'">
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Discard'">
                 <div class="col-sm-6" style="margin-bottom:10px">
                 <label class="btn btn-default btn-sm" ng-repeat="discardName in discards">
                   <input
@@ -175,6 +175,15 @@
                 </label>
                 </div>
                 <br />
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Card')">
+                Card OPTIONS!
+                </div>
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Support')">
+                Support OPTIONS!
+                </div>
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Upgrade')">
+                Upgrade OPTIONS!
+                </div>
                 <br />
             </div>
 
