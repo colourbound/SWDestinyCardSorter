@@ -1190,7 +1190,63 @@ app.filter('dieValueIs', function () {
   };
 });
 
+app.filter('categoryIs', function () {
+  return function (items, searchCategory) {
 
+    var filtered = [];
+    //console.log("searchCategory = " + searchCategory.name);
+    switch (searchCategory.name) {
+        //>=
+        case "Discard":
+            //console.log("Case 1");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            //console.log(filtered);
+            break;
+
+        //<=
+        case "2":
+            //console.log("Case 2");
+            if (stringMatch.test(DSide) == true && firstChar <= dieValue) {
+                isTrue = true;
+                matchCount++;
+                }
+            break;
+
+        //=
+        case "3":
+            //console.log("Case 3");
+            if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                isTrue = true;
+                matchCount++;
+                }
+            break;
+        default:
+            console.log("FAILED SWITCH");
+
+            /*if (stringMatch.test(DSide) == true && firstChar == dieValue) {
+                isTrue = true;
+                matchCount++;
+                }*/
+
+    }
+
+
+
+    return filtered;
+  };
+});
 
 
 
