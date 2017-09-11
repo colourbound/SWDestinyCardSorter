@@ -120,7 +120,7 @@
         "cp": 1318,
         "abilityCategory": [
             "Interrupt Before Defeated",
-            "Restriction Upgrade Move"
+            "Card Upgrade Move"
         ]
     },
     {
@@ -296,8 +296,8 @@
         "cp": 300,
         "abilityCategory": [
             "Value Increase Die Own",
-            "DiceC Control Removal Opponent",
-            "DiceE Effect Value Own"
+            "Dice Control Removal Opponent",
+            "Dice Effect Value Own"
         ]
     },
     {
@@ -690,7 +690,7 @@
         "label": "Sith Holocron",
         "cp": 0,
         "abilityCategory": [
-            "Restriction Upgrade Attach",
+            "Card Upgrade Attach Ignore",
             "Dice Control Reroll Noremove"
         ]
     },
@@ -823,7 +823,7 @@
         "cp": 811,
         "abilityCategory": [
             "Interrupt After Defeated Opponent",
-            "Character Ready This"
+            "Card Character Ready This"
         ]
     },
     {
@@ -909,7 +909,7 @@
         "cp": 1216,
         "abilityCategory": [
             "Interrupt After Activate Opponent",
-            "Character Activate This"
+            "Card Character Activate This"
         ]
     },
     {
@@ -997,7 +997,7 @@
         "label": "Crime Lord",
         "cp": 400,
         "abilityCategory": [
-            "Character Defeat Opponent"
+            "Card Character Defeat Opponent"
         ]
     },
     {
@@ -1260,7 +1260,7 @@
         "cp": 1418,
         "abilityCategory": [
             "Dice Effect Resolve",
-            "Playfrom Discard Vehicle"
+            "Card Vehicle Playfrom Discard"
         ]
     },
     {
@@ -1300,7 +1300,10 @@
         "url": "http://swdestinydb.com/card/01030",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01030.jpg",
         "label": "Rebel Trooper",
-        "cp": 800
+        "cp": 800,
+        "abilityCategory": [
+            "Keyword Guardian"
+        ]
     },
     {
         "sides": [
@@ -1599,8 +1602,9 @@
         "label": "Qui-Gon Jinn - Ataru Master",
         "cp": 1317,
         "abilityCategory": [
-            "Interrupt Shield Before",
-            "Damage Trade"
+            "Interrupt Before Shield",
+            "Damage Trade",
+            "Shield Synergy"
         ]
     },
     {
@@ -1821,7 +1825,7 @@
         "cp": 400,
         "abilityCategory": [
             "Interrupt Defeated Before",
-            "Upgrade Transfer Support"
+            "Card Upgrade Transfer Support"
         ]
     },
     {
@@ -1865,8 +1869,8 @@
         "label": "BB-8",
         "cp": 100,
         "abilityCategory": [
-            "Die Reroll Noremove",
-            "Die Resolve Noremove"
+            "Dice Control Reroll Noremove",
+            "Dice Effect Resolve Noremove"
         ]
     },
     {
@@ -1910,7 +1914,7 @@
         "label": "Rey's Staff",
         "cp": 200,
         "abilityCategory": [
-            "Die Removal Melee Ranged"
+            "Dice Control Removal Melee Ranged"
         ]
     },
     {
@@ -1952,8 +1956,8 @@
         "label": "Finn - First Order Defector",
         "cp": 1316,
         "abilityCategory": [
-            "Upgrade Ignorerestrict Weapon",
-            "Deck Cardinclude Red Villain Weapon Vehicles"
+            "Card Upgrade Ignorerestrict Weapon",
+            "Card Support Ignorerestrict Vehicles"
         ]
     },
     {
@@ -1995,7 +1999,7 @@
         "label": "Han Solo - Scoundrel",
         "cp": 1418,
         "abilityCategory": [
-            "Interrupt Play Ambush After",
+            "Interrupt After Play Ambush",
             "Shield Generation"
         ]
     },
@@ -2121,7 +2125,7 @@
         "label": "Millennium Falcon",
         "cp": 500,
         "abilityCategory": [
-            "Playfrom Discard Hand Event"
+            "Card Event Playfrom Discard Hand Free"
         ]
     },
     {
@@ -2165,7 +2169,7 @@
         "label": "Diplomatic Immunity",
         "cp": 400,
         "abilityCategory": [
-            "Shield Distributed"
+            "Shield Synergy Distributed"
         ]
     },
     {
@@ -2209,9 +2213,9 @@
         "label": "DL-44 Heavy Blaster Pistol",
         "cp": 300,
         "abilityCategory": [
-            "Ambush",
-            "Interrupt Play Upgrade After",
-            "Die Removal Choice"
+            "Keyword Ambush",
+            "Interrupt After Play Upgrade",
+            "Dice Control Removal Opponent Choice"
         ]
     },
     {
@@ -2255,7 +2259,7 @@
         "label": "Infiltrate",
         "cp": 100,
         "abilityCategory": [
-            "Die Reroll Opponent"
+            "Dice Control Reroll Opponent"
         ]
     },
     {
@@ -2297,7 +2301,7 @@
         "label": "Outpost",
         "cp": 200,
         "abilityCategory": [
-            "Resolve Battlefield"
+            "Resolve Battlefield bookmark"
         ]
     },
     {
@@ -2426,8 +2430,8 @@
         "label": "Promotion",
         "cp": 100,
         "abilityCategory": [
-            "Card Draw Deck",
-            "Interrupt Play After This"
+            "Draw Deck",
+            "Interrupt After Play This"
         ]
     },
     {
@@ -2471,7 +2475,8 @@
         "label": "Force Throw",
         "cp": 300,
         "abilityCategory": [
-            "Die Removal",
+            "Dice Control Removal",
+            "Dice Effect Value",
             "Damage Dievalue"
         ]
     },

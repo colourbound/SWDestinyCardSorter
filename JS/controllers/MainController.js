@@ -249,12 +249,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '4', name: 'Keyword'},
           {id: '5', name: 'Action Cheat'},
           {id: '6', name: 'Damage'},
-          {id: '7', name: 'Restriction Cheat'},
+          {id: '7', name: 'Cost Manipulation'},
           {id: '8', name: 'Interrupt'},
           {id: '9', name: 'Hand Reveal'},
-          {id: '10', name: 'Character'},
-          {id: '11', name: 'Draw'},
-          {id: '12', name: 'Cost Reduction'}
+          {id: '10', name: 'Card Manipulation'},
+          {id: '11', name: 'Draw'}
 
         ],
         selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
@@ -1222,6 +1221,7 @@ app.filter('categoryIs', function () {
         case "Dice":
             console.log("Dice");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1229,15 +1229,16 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        var dupeTest = (items.length - 1);
-                        if (item.name !== items[dupeTest].name) {
+                        console.log("MATCH");
+                        if (count < 1) {
                             //console.log("Pushed");
+                            count++;
                             filtered.push(item);
                         }
                         else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
 
             break;
@@ -1361,8 +1362,8 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Character":
-            console.log("Character");
+        case "Card Manipulation":
+            console.log("Card");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
@@ -1395,7 +1396,7 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Cost Reduction":
+        case "Cost Manipulate":
             console.log("Cost");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {
