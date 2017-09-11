@@ -38,7 +38,7 @@
         "label": "Captain Phasma - Elite Trooper",
         "cp": 1215,
         "abilityCategory": [
-            "Guardian"
+            "Keyword Guardian"
         ]
     },
     {
@@ -119,8 +119,8 @@
         "label": "General Grievous - Jedi Hunter",
         "cp": 1318,
         "abilityCategory": [
-            "Interrupt Defeated Before",
-            "Upgrade Move"
+            "Interrupt Before Defeated",
+            "Restriction Upgrade Move"
         ]
     },
     {
@@ -162,7 +162,7 @@
         "label": "General Veers - Field Commander",
         "cp": 1114,
         "abilityCategory": [
-            "Die Turn Support Own"
+            "Dice Control Turn Support Own"
         ]
     },
     {
@@ -296,7 +296,8 @@
         "cp": 300,
         "abilityCategory": [
             "Value Increase Die Own",
-            "Die Removal Opponent"
+            "DiceC Control Removal Opponent",
+            "DiceE Effect Value Own"
         ]
     },
     {
@@ -340,7 +341,7 @@
         "label": "F-11D Rifle",
         "cp": 200,
         "abilityCategory": [
-            "Redeploy",
+            "Keyword Redeploy",
             "Damage Distributed"
         ]
     },
@@ -383,7 +384,8 @@
         "label": "Count Dooku - Devious Strategist",
         "cp": 1115,
         "abilityCategory": [
-            "Shield Generation"
+            "Shield Generation",
+            "Interrupt Before Damage"
         ]
     },
     {
@@ -510,7 +512,7 @@
         "label": "Nightsister",
         "cp": 800,
         "abilityCategory": [
-            "Die Reroll Own"
+            "Dice Control Reroll Own"
         ]
     },
     {
@@ -555,7 +557,7 @@
         "cp": 200,
         "abilityCategory": [
             "Damage Unblockable",
-            "Die Turn Opponent"
+            "Dice Control Turn Opponent"
         ]
     },
     {
@@ -599,7 +601,7 @@
         "label": "Immobilize",
         "cp": 200,
         "abilityCategory": [
-            "Die Turn Blank"
+            "Dice Control Turn Blank"
         ]
     },
     {
@@ -644,7 +646,7 @@
         "cp": 300,
         "abilityCategory": [
             "Damage Noremove",
-            "Die Reroll Noremove"
+            "Dice Control Reroll Noremove"
         ]
     },
     {
@@ -688,7 +690,8 @@
         "label": "Sith Holocron",
         "cp": 0,
         "abilityCategory": [
-            "Upgrade Attach Ignorerestrict"
+            "Restriction Upgrade Attach",
+            "Dice Control Reroll Noremove"
         ]
     },
     {
@@ -732,7 +735,7 @@
         "label": "Infantry Grenades",
         "cp": 200,
         "abilityCategory": [
-            "Damage Distributed"
+            "Damage Splash"
         ]
     },
     {
@@ -776,7 +779,7 @@
         "label": "Speeder Bike Scout",
         "cp": 300,
         "abilityCategory": [
-            "Die Removal",
+            "Dice Control Removal",
             "Action Cheat"
         ]
     },
@@ -819,8 +822,8 @@
         "label": "Bala-Tik - Gang Leader",
         "cp": 811,
         "abilityCategory": [
-            "Interrupt Defeated After Opponent",
-            "Character Ready"
+            "Interrupt After Defeated Opponent",
+            "Character Ready This"
         ]
     },
     {
@@ -862,8 +865,8 @@
         "label": "Jabba the Hutt - The Great and Mighty",
         "cp": 1114,
         "abilityCategory": [
-            "Interrupt Activate After Own",
-            "Die Reroll Own"
+            "Interrupt After Activate Own",
+            "Dice Control Reroll"
         ]
     },
     {
@@ -905,8 +908,8 @@
         "label": "Jango Fett - Lethal Mercenary",
         "cp": 1216,
         "abilityCategory": [
-            "Interrupt Activate After Opponent",
-            "Character Activate Own"
+            "Interrupt After Activate Opponent",
+            "Character Activate This"
         ]
     },
     {
@@ -948,8 +951,8 @@
         "label": "Tusken Raider",
         "cp": 900,
         "abilityCategory": [
-            "Interrupt Activate After",
-            "Action Cheat",
+            "Interrupt After Activate This",
+            "Action Cheat Fast",
             "Fast Hands"
         ]
     },
@@ -1038,7 +1041,7 @@
         "label": "Flame Thrower",
         "cp": 300,
         "abilityCategory": [
-            "Damage Distributed"
+            "Damage Splash"
         ]
     },
     {
@@ -1082,8 +1085,9 @@
         "label": "Gaffi Stick",
         "cp": 200,
         "abilityCategory": [
-            "Redploy",
-            "Damage Upsize"
+            "Keyword Redploy",
+            "Damage Upsize",
+            "Dice Effect Value"
         ]
     },
     {
@@ -1128,7 +1132,7 @@
         "cp": 100,
         "abilityCategory": [
             "Shield Removal",
-            "Die Removal"
+            "Dice Control Removal"
         ]
     },
     {
@@ -1170,7 +1174,7 @@
         "label": "Admiral Ackbar - Perceptive Tactician",
         "cp": 1014,
         "abilityCategory": [
-            "Interrupt Lastcard After",
+            "Interrupt After Lastcard",
             "Damage Distributed Incidental"
         ]
     },
@@ -1213,7 +1217,7 @@
         "label": "Leia Organa - Born Leader",
         "cp": 1216,
         "abilityCategory": [
-            "Die Reroll Own"
+            "Dice Control Reroll Own"
         ]
     },
     {
@@ -1255,8 +1259,8 @@
         "label": "Poe Dameron - Ace Pilot",
         "cp": 1418,
         "abilityCategory": [
-            "Die Resolve",
-            "Playfrom Discard"
+            "Dice Effect Resolve",
+            "Playfrom Discard Vehicle"
         ]
     },
     {
@@ -1382,7 +1386,7 @@
         "cp": 400,
         "abilityCategory": [
             "Damage Noremove",
-            "Die Reroll"
+            "Dice Control Reroll This"
         ]
     },
     {
@@ -1427,7 +1431,7 @@
         "cp": 100,
         "abilityCategory": [
             "Hand Reveal",
-            "Discard Hand"
+            "Discard Card Hand"
         ]
     },
     {
@@ -1510,8 +1514,8 @@
         "label": "Luke Skywalker - Jedi Knight",
         "cp": 1520,
         "abilityCategory": [
-            "Card Draw Deck",
-            "Interrupt Activate After Own"
+            "Draw Deck",
+            "Interrupt After Activate Own"
         ]
     },
     {
@@ -1553,7 +1557,7 @@
         "label": "Padawan",
         "cp": 800,
         "abilityCategory": [
-            "Upgrade Costreduce"
+            "Cost Reduction Upgrade"
         ]
     },
     {

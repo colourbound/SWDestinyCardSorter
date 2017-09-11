@@ -250,8 +250,12 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '5', name: 'Action Cheat'},
           {id: '6', name: 'Damage'},
           {id: '7', name: 'Restriction Cheat'},
-          {id: '8', name: 'Damage'},
-          {id: '9', name: 'Shield'}
+          {id: '8', name: 'Interrupt'},
+          {id: '9', name: 'Hand Reveal'},
+          {id: '10', name: 'Character'},
+          {id: '11', name: 'Draw'},
+          {id: '12', name: 'Cost Reduction'}
+
         ],
         selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
     };
@@ -1196,7 +1200,7 @@ app.filter('categoryIs', function () {
     var filtered = [];
     //console.log("searchCategory = " + searchCategory.name);
     switch (searchCategory.name) {
-        //>=
+
         case "Discard":
             //console.log("Case 1");
             angular.forEach(items, function(item) {
@@ -1204,8 +1208,8 @@ app.filter('categoryIs', function () {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
                     //console.log("Splitstring = " + splitString[0]);
-                    console.log(splitString[0] + " VS " + searchCategory.name);
-                    var stringMatch = new RegExp(splitString[0], 'i');
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0]);//no modifier to match Discard but not Card
                     if (stringMatch.test(searchCategory.name)) {
                         //console.log("MATCH");
                         filtered.push(item);
@@ -1215,23 +1219,199 @@ app.filter('categoryIs', function () {
             //console.log(filtered);
             break;
 
-        //<=
-        case "2":
-            //console.log("Case 2");
-            if (stringMatch.test(DSide) == true && firstChar <= dieValue) {
-                isTrue = true;
-                matchCount++;
-                }
+        case "Dice":
+            console.log("Dice");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        var dupeTest = (items.length - 1);
+                        if (item.name !== items[dupeTest].name) {
+                            //console.log("Pushed");
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
+                    }
+                });
+            });
+
             break;
 
-        //=
-        case "3":
-            //console.log("Case 3");
-            if (stringMatch.test(DSide) == true && firstChar == dieValue) {
-                isTrue = true;
-                matchCount++;
-                }
+        case "Shield":
+            console.log("Shield");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
             break;
+
+        case "Keyword":
+            console.log("Keyword");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Action Cheat":
+            console.log("Action");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Damage":
+            console.log("Damage");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Restriction Cheat":
+            console.log("Restriction");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Interrupt":
+            console.log("Restriction");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Hand Reveal":
+            console.log("Hand");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Character":
+            console.log("Character");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Draw":
+            console.log("Draw");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Cost Reduction":
+            console.log("Cost");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
         default:
             console.log("FAILED SWITCH");
 
