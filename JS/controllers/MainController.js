@@ -211,7 +211,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 //set the values up for passing checkboxes
     $scope.checkboxModel = {
        OnlySides : false,
-       DieSidesOnOff : true,
+       DieSidesOnOff : false,
        ResourceCosted : false,
        NotResourceCosted : false
      };
@@ -255,7 +255,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '10', name: 'Card Manipulation'},
           {id: '11', name: 'Draw and Deck Search'},
           {id: '12', name: 'Resource'},
-          {id: '13', name: 'Battlefield'}
+          {id: '13', name: 'Battlefield'},
+          {id: '14', name: 'Synergy'}
 
         ],
         selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
@@ -1350,6 +1351,7 @@ app.filter('categoryIs', function () {
         case "Card Manipulation":
             console.log("Card");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1357,10 +1359,16 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
@@ -1416,6 +1424,23 @@ app.filter('categoryIs', function () {
             break;
 
         case "Battlefield":
+            console.log("Cost");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Synergy":
             console.log("Cost");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {
