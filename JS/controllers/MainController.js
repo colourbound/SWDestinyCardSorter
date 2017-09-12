@@ -253,7 +253,9 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '8', name: 'Interrupt'},
           {id: '9', name: 'Hand Reveal'},
           {id: '10', name: 'Card Manipulation'},
-          {id: '11', name: 'Draw'}
+          {id: '11', name: 'Draw and Deck Search'},
+          {id: '12', name: 'Resource'},
+          {id: '13', name: 'Battlefield'}
 
         ],
         selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
@@ -1298,24 +1300,7 @@ app.filter('categoryIs', function () {
             console.log("Damage");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {
-                    //console.log("Cat = " + cat);
-                    var splitString = cat.split(" ");
-                    //console.log("Splitstring = " + splitString[0]);
-                    //console.log(splitString[0] + " VS " + searchCategory.name);
-                    var stringMatch = new RegExp(splitString[0], 'i');
-                    if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
-                    }
-                });
-            });
-            break;
-
-        case "Restriction Cheat":
-            console.log("Restriction");
-            angular.forEach(items, function(item) {
-                angular.forEach(item.abilityCategory, function(cat) {
-                    //console.log("Cat = " + cat);
+                    console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
                     //console.log("Splitstring = " + splitString[0]);
                     //console.log(splitString[0] + " VS " + searchCategory.name);
@@ -1379,7 +1364,7 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Draw":
+        case "Draw and Deck Search":
             console.log("Draw");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {
@@ -1396,7 +1381,41 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Cost Manipulate":
+        case "Cost Manipulation":
+            console.log("Cost");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Resource":
+            console.log("Cost");
+            angular.forEach(items, function(item) {
+                angular.forEach(item.abilityCategory, function(cat) {
+                    //console.log("Cat = " + cat);
+                    var splitString = cat.split(" ");
+                    //console.log("Splitstring = " + splitString[0]);
+                    //console.log(splitString[0] + " VS " + searchCategory.name);
+                    var stringMatch = new RegExp(splitString[0], 'i');
+                    if (stringMatch.test(searchCategory.name)) {
+                        //console.log("MATCH");
+                        filtered.push(item);
+                    }
+                });
+            });
+            break;
+
+        case "Battlefield":
             console.log("Cost");
             angular.forEach(items, function(item) {
                 angular.forEach(item.abilityCategory, function(cat) {

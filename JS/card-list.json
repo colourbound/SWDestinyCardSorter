@@ -2301,7 +2301,7 @@
         "label": "Outpost",
         "cp": 200,
         "abilityCategory": [
-            "Resolve Battlefield bookmark"
+            "Battlefield Resolve Ability bookmark"
         ]
     },
     {
@@ -2521,8 +2521,9 @@
         "label": "Force Training",
         "cp": 200,
         "abilityCategory": [
-            "Bookmark",
-            "Damage Trade"
+            "Shield Generation",
+            "Resource Generation",
+            "Damage"
         ]
     },
     {
@@ -2564,7 +2565,11 @@
         "url": "http://swdestinydb.com/card/01059",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01059.jpg",
         "label": "Lightsaber",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Keyword Redeploy",
+            "Damage Unblockable"
+        ]
     },
     {
         "sides": [
@@ -2605,7 +2610,10 @@
         "url": "http://swdestinydb.com/card/01060",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01060.jpg",
         "label": "Mind Probe",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "Damage Handsize"
+        ]
     },
     {
         "sides": [
@@ -2646,7 +2654,11 @@
         "url": "http://swdestinydb.com/card/01061",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01061.jpg",
         "label": "Comlink",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Control Reroll",
+            "Interrupt After Play This"
+        ]
     },
     {
         "sides": [
@@ -2687,7 +2699,10 @@
         "url": "http://swdestinydb.com/card/01062",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01062.jpg",
         "label": "Datapad",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Turn Own"
+        ]
     },
     {
         "sides": [
@@ -2728,7 +2743,11 @@
         "url": "http://swdestinydb.com/card/01063",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01063.jpg",
         "label": "Holdout Blaster",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Keyword Ambush",
+            "Keyword Redeploy"
+        ]
     },
     {
         "sides": [
@@ -2767,7 +2786,11 @@
         "url": "http://swdestinydb.com/card/01064",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01064.jpg",
         "label": "Black Market",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Draw Deck",
+            "Cost Reduction Upgrade Hand"
+        ]
     },
     {
         "sides": [
@@ -2808,7 +2831,11 @@
         "url": "http://swdestinydb.com/card/01065",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01065.jpg",
         "label": "Cunning",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Bookmark",
+            "Card Resolve"
+        ]
     },
     {
         "sides": [
@@ -2849,7 +2876,11 @@
         "url": "http://swdestinydb.com/card/01066",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01066.jpg",
         "label": "Jetpack",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Control Removal Melee",
+            "Shield Generation"
+        ]
     },
     {
         "sides": [
@@ -2890,7 +2921,10 @@
         "url": "http://swdestinydb.com/card/01067",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01067.jpg",
         "label": "Thermal Detonator",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Damage Splash"
+        ]
     },
     {
         "set_code": "AW",
@@ -2921,7 +2955,10 @@
         "url": "http://swdestinydb.com/card/01068",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01068.jpg",
         "label": "Cannon Fodder",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Dice Control Removal Sacrifice Melee Ranged"
+        ]
     },
     {
         "set_code": "AW",
@@ -2952,7 +2989,11 @@
         "url": "http://swdestinydb.com/card/01069",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01069.jpg",
         "label": "Closing the Net",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal Choice",
+            "Card Placebottomofdeck"
+        ]
     },
     {
         "set_code": "AW",
@@ -2983,7 +3024,10 @@
         "url": "http://swdestinydb.com/card/01070",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01070.jpg",
         "label": "Endless Ranks",
-        "cp": 500
+        "cp": 500,
+        "abilityCategory": [
+            "Card Character Revive"
+        ]
     },
     {
         "set_code": "AW",
@@ -3014,7 +3058,10 @@
         "url": "http://swdestinydb.com/card/01071",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01071.jpg",
         "label": "Occupation",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Resource Disrupt Opponent"
+        ]
     },
     {
         "set_code": "AW",
@@ -3045,7 +3092,11 @@
         "url": "http://swdestinydb.com/card/01072",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01072.jpg",
         "label": "Probe",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Hand Peak",
+            "Discard Hand Event"
+        ]
     },
     {
         "set_code": "AW",
@@ -3076,7 +3127,11 @@
         "url": "http://swdestinydb.com/card/01073",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01073.jpg",
         "label": "Sweep the Area",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Dice Control Reroll Opponent",
+            "Bookmark wantToUseThisSynergy "
+        ]
     },
     {
         "set_code": "AW",
@@ -3107,7 +3162,10 @@
         "url": "http://swdestinydb.com/card/01074",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01074.jpg",
         "label": "Tactical Mastery",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Action Cheat"
+        ]
     },
     {
         "set_code": "AW",
@@ -3138,7 +3196,10 @@
         "url": "http://swdestinydb.com/card/01075",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01075.jpg",
         "label": "The Best Defense...",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal Sacrifice"
+        ]
     },
     {
         "set_code": "AW",
@@ -3169,7 +3230,10 @@
         "url": "http://swdestinydb.com/card/01076",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01076.jpg",
         "label": "Drudge Work",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Resource Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -3200,7 +3264,10 @@
         "url": "http://swdestinydb.com/card/01077",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01077.jpg",
         "label": "Local Garrison",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Resource Disrupt Persistent"
+        ]
     },
     {
         "set_code": "AW",
@@ -3233,7 +3300,10 @@
         "url": "http://swdestinydb.com/card/01078",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01078.jpg",
         "label": "Personal Escort",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Keyword Guardian"
+        ]
     },
     {
         "set_code": "AW",
@@ -3264,7 +3334,11 @@
         "url": "http://swdestinydb.com/card/01079",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01079.jpg",
         "label": "Abandon All Hope",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Resource Disrupt",
+            "Discard Hand"
+        ]
     },
     {
         "set_code": "AW",
@@ -3295,7 +3369,10 @@
         "url": "http://swdestinydb.com/card/01080",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01080.jpg",
         "label": "Boundless Ambition",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Draw Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -3326,7 +3403,10 @@
         "url": "http://swdestinydb.com/card/01081",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01081.jpg",
         "label": "Enrage",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Resource Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -3357,7 +3437,11 @@
         "url": "http://swdestinydb.com/card/01082",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01082.jpg",
         "label": "Feel Your Anger",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal",
+            "Synergy Blanks"
+        ]
     },
     {
         "set_code": "AW",
@@ -3388,7 +3472,11 @@
         "url": "http://swdestinydb.com/card/01083",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01083.jpg",
         "label": "Force Strike",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Turn Melee",
+            "Action Cheat"
+        ]
     },
     {
         "set_code": "AW",
@@ -3419,7 +3507,10 @@
         "url": "http://swdestinydb.com/card/01084",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01084.jpg",
         "label": "Intimidate",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Shield Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -3450,7 +3541,10 @@
         "url": "http://swdestinydb.com/card/01085",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01085.jpg",
         "label": "Isolation",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal Character"
+        ]
     },
     {
         "set_code": "AW",
@@ -3481,7 +3575,10 @@
         "url": "http://swdestinydb.com/card/01086",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01086.jpg",
         "label": "No Mercy",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Effect Value Own Melee Ranged"
+        ]
     },
     {
         "set_code": "AW",
@@ -3512,7 +3609,10 @@
         "url": "http://swdestinydb.com/card/01087",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01087.jpg",
         "label": "Pulling the Strings",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Draw Search"
+        ]
     },
     {
         "set_code": "AW",
@@ -3543,7 +3643,10 @@
         "url": "http://swdestinydb.com/card/01088",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01088.jpg",
         "label": "Emperor's Favor",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Draw Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -3574,7 +3677,12 @@
         "url": "http://swdestinydb.com/card/01089",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01089.jpg",
         "label": "Power of the Dark Side",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Control Reroll Own",
+            "Damage Unblockable",
+            "Synergy Blanks"
+        ]
     },
     {
         "set_code": "AW",
@@ -3607,7 +3715,10 @@
         "url": "http://swdestinydb.com/card/01090",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01090.jpg",
         "label": "Hidden In Shadow",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Shield Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -3638,7 +3749,11 @@
         "url": "http://swdestinydb.com/card/01091",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01091.jpg",
         "label": "Nowhere to Run",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Control Turn Own Blank",
+            "Synergy Blanks"
+        ]
     },
     {
         "set_code": "AW",
@@ -3669,7 +3784,11 @@
         "url": "http://swdestinydb.com/card/01092",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01092.jpg",
         "label": "Ace in the Hole",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Card Upgrade Play Free",
+            "Cost Reduction Upgrade"
+        ]
     },
     {
         "set_code": "AW",
@@ -3700,7 +3819,10 @@
         "url": "http://swdestinydb.com/card/01093",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01093.jpg",
         "label": "Armed to the Teeth",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Damage Trade Upgrade"
+        ]
     },
     {
         "set_code": "AW",
@@ -3731,7 +3853,10 @@
         "url": "http://swdestinydb.com/card/01094",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01094.jpg",
         "label": "Confiscation",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Discard Upgrade Inplay Return"
+        ]
     },
     {
         "set_code": "AW",
@@ -3762,7 +3887,10 @@
         "url": "http://swdestinydb.com/card/01095",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01095.jpg",
         "label": "Fight Dirty",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Damage Trade Dice"
+        ]
     },
     {
         "set_code": "AW",
@@ -3793,7 +3921,11 @@
         "url": "http://swdestinydb.com/card/01096",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01096.jpg",
         "label": "Go for the Kill",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Damage Unblockable",
+            "Dice Effect Unblockable"
+        ]
     },
     {
         "set_code": "AW",
@@ -3824,7 +3956,10 @@
         "url": "http://swdestinydb.com/card/01097",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01097.jpg",
         "label": "He Doesn't Like You",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Dice Control Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -3855,7 +3990,10 @@
         "url": "http://swdestinydb.com/card/01098",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01098.jpg",
         "label": "Lying in Wait",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Discard Card Hand"
+        ]
     },
     {
         "set_code": "AW",
@@ -3886,7 +4024,10 @@
         "url": "http://swdestinydb.com/card/01099",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01099.jpg",
         "label": "Backup Muscle",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Damage Unblockable"
+        ]
     },
     {
         "set_code": "AW",
@@ -3917,7 +4058,11 @@
         "url": "http://swdestinydb.com/card/01100",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01100.jpg",
         "label": "My Kind of Scum",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Synergy Disrupt",
+            "Resource Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -3948,7 +4093,10 @@
         "url": "http://swdestinydb.com/card/01101",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01101.jpg",
         "label": "Underworld Connections",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Resource Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -3979,7 +4127,11 @@
         "url": "http://swdestinydb.com/card/01102",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01102.jpg",
         "label": "Prized Possession",
-        "cp": 400
+        "cp": 400,
+        "abilityCategory": [
+            "Interrupt After Play This",
+            "Dice Control Removal Persistent"
+        ]
     },
     {
         "set_code": "AW",
@@ -4010,7 +4162,12 @@
         "url": "http://swdestinydb.com/card/01103",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01103.jpg",
         "label": "Commando Raid",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Synergy Discard",
+            "Dice Effect Value",
+            "Draw Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -4041,7 +4198,10 @@
         "url": "http://swdestinydb.com/card/01104",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01104.jpg",
         "label": "Defensive Position",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -4072,7 +4232,10 @@
         "url": "http://swdestinydb.com/card/01105",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01105.jpg",
         "label": "Field Medic",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Damage Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -4103,7 +4266,12 @@
         "url": "http://swdestinydb.com/card/01106",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01106.jpg",
         "label": "Hit and Run",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Keyword Ambush",
+            "Action Cheat",
+            "Card Character Activate"
+        ]
     },
     {
         "set_code": "AW",
@@ -4134,7 +4302,11 @@
         "url": "http://swdestinydb.com/card/01107",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01107.jpg",
         "label": "It's a Trap!",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Keyword Ambush",
+            "Dice Control Turn Own"
+        ]
     },
     {
         "set_code": "AW",
@@ -4165,7 +4337,10 @@
         "url": "http://swdestinydb.com/card/01108",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01108.jpg",
         "label": "Natural Talent",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Effect Value Own"
+        ]
     },
     {
         "set_code": "AW",
@@ -4196,7 +4371,11 @@
         "url": "http://swdestinydb.com/card/01109",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01109.jpg",
         "label": "Rearm",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Cost Reduction Upgrade Playfrom Discard",
+            "Card Upgrade Playfrom Discard"
+        ]
     },
     {
         "set_code": "AW",
@@ -4227,7 +4406,10 @@
         "url": "http://swdestinydb.com/card/01110",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01110.jpg",
         "label": "Retreat",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Battlefield Endphase"
+        ]
     },
     {
         "set_code": "AW",
@@ -4258,7 +4440,10 @@
         "url": "http://swdestinydb.com/card/01111",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01111.jpg",
         "label": "Strategic Planning",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Card Support Activate Exhaust"
+        ]
     },
     {
         "set_code": "AW",
@@ -4289,7 +4474,10 @@
         "url": "http://swdestinydb.com/card/01112",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01112.jpg",
         "label": "Surgical Strike",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Discard Support Trade"
+        ]
     },
     {
         "set_code": "AW",
@@ -4320,7 +4508,11 @@
         "url": "http://swdestinydb.com/card/01113",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01113.jpg",
         "label": "Resistance HQ",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Shield Generation",
+            "Card Support Ready"
+        ]
     },
     {
         "set_code": "AW",
@@ -4351,7 +4543,10 @@
         "url": "http://swdestinydb.com/card/01114",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01114.jpg",
         "label": "Anticipate",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Dice Control Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -4382,7 +4577,10 @@
         "url": "http://swdestinydb.com/card/01115",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01115.jpg",
         "label": "Defensive Stance",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Shield Generation"
+        ]
     },
     {
         "set_code": "AW",
@@ -4413,7 +4611,10 @@
         "url": "http://swdestinydb.com/card/01116",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01116.jpg",
         "label": "Force Misdirection",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -4444,7 +4645,10 @@
         "url": "http://swdestinydb.com/card/01117",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01117.jpg",
         "label": "Heroism",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Dice Control Removal Sacrifice"
+        ]
     },
     {
         "set_code": "AW",
@@ -4475,7 +4679,10 @@
         "url": "http://swdestinydb.com/card/01118",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01118.jpg",
         "label": "Noble Sacrifice",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Card Character Exhaust"
+        ]
     },
     {
         "set_code": "AW",
@@ -4506,7 +4713,10 @@
         "url": "http://swdestinydb.com/card/01119",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01119.jpg",
         "label": "Patience",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Discard Card Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -4537,7 +4747,10 @@
         "url": "http://swdestinydb.com/card/01120",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01120.jpg",
         "label": "Return of the Jedi",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Draw Discard Hand"
+        ]
     },
     {
         "set_code": "AW",
@@ -4568,7 +4781,11 @@
         "url": "http://swdestinydb.com/card/01121",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01121.jpg",
         "label": "Riposte",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Shield Synergy",
+            "Damage Trade"
+        ]
     },
     {
         "set_code": "AW",
@@ -4599,7 +4816,10 @@
         "url": "http://swdestinydb.com/card/01122",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01122.jpg",
         "label": "Willpower",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Damage Removal Move"
+        ]
     },
     {
         "set_code": "AW",
@@ -4630,7 +4850,10 @@
         "url": "http://swdestinydb.com/card/01123",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01123.jpg",
         "label": "Jedi Council",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Discard Card Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -4661,7 +4884,10 @@
         "url": "http://swdestinydb.com/card/01124",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01124.jpg",
         "label": "Awakening",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Effect Nonmodified"
+        ]
     },
     {
         "set_code": "AW",
@@ -4692,7 +4918,10 @@
         "url": "http://swdestinydb.com/card/01125",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01125.jpg",
         "label": "The Force is Strong",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Cost Reduction Card Hand"
+        ]
     },
     {
         "set_code": "AW",
@@ -4723,7 +4952,13 @@
         "url": "http://swdestinydb.com/card/01126",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01126.jpg",
         "label": "Daring Escape",
-        "cp": 200
+        "cp": 200,
+        "abilityCategory": [
+            "Keyword Ambush",
+            "Dice Control Reroll Opponent",
+            "Dice Control Removal",
+            "Synergy Blanks"
+        ]
     },
     {
         "set_code": "AW",
@@ -4754,7 +4989,10 @@
         "url": "http://swdestinydb.com/card/01127",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01127.jpg",
         "label": "Don't Get Cocky",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Draw Deck"
+        ]
     },
     {
         "set_code": "AW",
@@ -4785,7 +5023,10 @@
         "url": "http://swdestinydb.com/card/01128",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01128.jpg",
         "label": "Draw Attention",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Damage Removal Move"
+        ]
     },
     {
         "set_code": "AW",
@@ -4816,7 +5057,10 @@
         "url": "http://swdestinydb.com/card/01129",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01129.jpg",
         "label": "Hyperspace Jump",
-        "cp": 300
+        "cp": 300,
+        "abilityCategory": [
+            "Battlefield Endphase Switch"
+        ]
     },
     {
         "set_code": "AW",
@@ -4847,7 +5091,11 @@
         "url": "http://swdestinydb.com/card/01130",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01130.jpg",
         "label": "Let The Wookiee Win",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Damage Distributed",
+            "Dice Control Removal"
+        ]
     },
     {
         "set_code": "AW",
@@ -4878,7 +5126,10 @@
         "url": "http://swdestinydb.com/card/01131",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01131.jpg",
         "label": "Negotiate",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Removal Trade"
+        ]
     },
     {
         "set_code": "AW",
@@ -4909,7 +5160,10 @@
         "url": "http://swdestinydb.com/card/01132",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01132.jpg",
         "label": "Scavenge",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Draw Discard Upgrade Support"
+        ]
     },
     {
         "set_code": "AW",
@@ -4940,7 +5194,11 @@
         "url": "http://swdestinydb.com/card/01133",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01133.jpg",
         "label": "Shoot First",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Keyword Ambush",
+            "Dice Control Removal Ranged"
+        ]
     },
     {
         "set_code": "AW",
@@ -4971,7 +5229,10 @@
         "url": "http://swdestinydb.com/card/01134",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01134.jpg",
         "label": "Smuggling",
-        "cp": 0
+        "cp": 0,
+        "abilityCategory": [
+            "Resource Generation Trade"
+        ]
     },
     {
         "set_code": "AW",
@@ -5002,7 +5263,11 @@
         "url": "http://swdestinydb.com/card/01135",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/01/01135.jpg",
         "label": "Play the Odds",
-        "cp": 100
+        "cp": 100,
+        "abilityCategory": [
+            "Dice Control Reroll Own",
+            "Resource Generation"
+        ]
     },
     {
         "set_code": "AW",
