@@ -203,6 +203,34 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
   };
 
+// Dice Toggle filter---------------------------------
+
+  // Fruits
+  $scope.diceCategories = ['Control', 'Effect'];
+
+  // Selected fruits
+  $scope.diceCatSelection = ['Control'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDiceCatSelection = function toggleDiceCatSelection(diceCatName) {
+    var idx = $scope.diceCatSelection.indexOf(diceCatName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.diceCatSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.diceCatSelection = [];
+      $scope.diceCatSelection.push(diceCatName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
 
 
 
@@ -1197,7 +1225,7 @@ app.filter('dieValueIs', function () {
 });
 
 app.filter('categoryIs', function () {
-  return function (items, searchCategory) {
+  return function (items, searchCategory, discardCategory, diceCategory) {
 
     var filtered = [];
     //console.log("searchCategory = " + searchCategory.name);
@@ -1212,7 +1240,8 @@ app.filter('categoryIs', function () {
                     //console.log("Splitstring = " + splitString[0]);
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0]);//no modifier to match Discard but not Card
-                    if (stringMatch.test(searchCategory.name)) {
+                    var selectionMatch = new RegExp(discardCategory[0]);
+                    if (stringMatch.test(searchCategory.name) && selectionMatch.test(cat)) {
                         //console.log("MATCH");
                         filtered.push(item);
                     }
@@ -1223,6 +1252,10 @@ app.filter('categoryIs', function () {
 
         case "Dice":
             console.log("Dice");
+            var rerollTrue = false;
+            var turnTrue = false;
+            var removalTrue = false;
+            //UNFINISHED - Trying to pass arguments during each test so don't have to go through categories multiple times
             angular.forEach(items, function(item) {
                 var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
@@ -1231,9 +1264,11 @@ app.filter('categoryIs', function () {
                     //console.log("Splitstring = " + splitString[0]);
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
-                    if (stringMatch.test(searchCategory.name)) {
+                    var selectionMatch = new RegExp(diceCategory[0]);
+                    if (stringMatch.test(searchCategory.name)  && selectionMatch.test(cat)) {
                         console.log("MATCH");
                         if (count < 1) {
+                            //if ()
                             //console.log("Pushed");
                             count++;
                             filtered.push(item);

@@ -162,6 +162,9 @@
 
             <div class="clearfloat"></div>
             <br />
+
+            <!------------DISCARD----------------->
+
             <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Discard'">
                 <div class="col-sm-6" style="margin-bottom:10px">
                 <label class="btn btn-default btn-sm" ng-repeat="discardName in discards">
@@ -187,6 +190,30 @@
                 <br />
             </div>
 
+            <!------------DICE----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Dice'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="diceCatName in diceCategories">
+                  <input
+                    type="checkbox"
+                    name="selectedDiceCat[]"
+                    value="{{diceCatName}}"
+                    ng-checked="diceCatSelection.indexOf(diceCatName) > -1"
+                    ng-click="toggleDiceCatSelection(diceCatName)"
+                  > <strong>{{diceCatName}}</strong>
+                </label>
+                </div>
+                <br />
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!diceCatSelection.indexOf('Control')">
+                Control OPTIONS!
+                </div>
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!diceCatSelection.indexOf('Effect')">
+                Effect OPTIONS!
+                </div>
+                <br />
+            </div>
+
 
 
             <!--<div class="clearfloat"></div>-->
@@ -194,7 +221,7 @@
             <h1>{{ purpose }}</h1>
 
 
-            <div ng-repeat="card in cardlist | nameContains:searchString | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | categoryIs:dropdownCardCategory.selectedOption | resourceCostedIs:checkboxModel.ResourceCosted:checkboxModel.NotResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount" class="col-md-6">
+            <div ng-repeat="card in cardlist | nameContains:searchString | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | categoryIs:dropdownCardCategory.selectedOption:discardsSelection:diceCatSelection | resourceCostedIs:checkboxModel.ResourceCosted:checkboxModel.NotResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount" class="col-md-6">
                 <!--<div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | dieValueIs:dropdownOperators.selectedOption:dieValueInput | sideIsComplex:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">-->
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">
