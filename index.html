@@ -179,13 +179,31 @@
                 </div>
                 <br />
                 <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Card')">
-                Card OPTIONS!
+                    Card OPTIONS!
+                    <br />
+                        <label class="btn btn-default btn-sm" ng-repeat="discardsCardName in discardsCard">
+                          <input
+                            type="checkbox"
+                            name="selectedDiscardsCard[]"
+                            value="{{discardsCardName}}"
+                            ng-checked="discardsCardSelection.indexOf(discardsCardName) > -1"
+                            ng-click="toggleDiscardsCardSelection(discardsCardName)"
+                          > <strong>{{discardsCardName}}</strong>
+                        </label>
                 </div>
                 <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Support')">
-                Support OPTIONS!
+                    Support OPTIONS!
                 </div>
                 <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!discardsSelection.indexOf('Upgrade')">
-                Upgrade OPTIONS!
+                    Upgrade OPTIONS!
+                        <label class="btn btn-default btn-sm">
+                          <input
+                            type="checkbox"
+                            name="Include return to hand cards"
+                            value="Include return to hand cards"
+                            ng-model="checkboxModel.DiscardUpgradeReturn"
+                          > <strong>Include <i>return to hand</i> cards</strong>
+                        </label>
                 </div>
                 <br />
             </div>
@@ -221,7 +239,23 @@
             <h1>{{ purpose }}</h1>
 
 
-            <div ng-repeat="card in cardlist | nameContains:searchString | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | categoryIs:dropdownCardCategory.selectedOption:discardsSelection:diceCatSelection | resourceCostedIs:checkboxModel.ResourceCosted:checkboxModel.NotResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount" class="col-md-6">
+            <div ng-repeat="card in cardlist |
+                nameContains:searchString |
+                filter: { sides:dieSidesSearch } |
+                filter: { abilityCategory:searchAbilityCategory } |
+                filter: { abilityCategory:searchAbilityCategory2} |
+                affiliationIs:selection |
+                typeIs:typesSelection |
+                colourIs:coloursSelection |
+                categoryIs:
+                    dropdownCardCategory.selectedOption:
+                            discardsSelection:
+                            discardsCardSelection:
+                            checkboxModel.DiscardUpgradeReturn:
+                    diceCatSelection |
+                resourceCostedIs:checkboxModel.ResourceCosted:checkboxModel.NotResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount"
+             class="col-md-6">
+
                 <!--<div ng-repeat="card in cardlist | nameContains:searchString | categoryIs:searchCategory | filter: { sides:dieSidesSearch } | filter: { abilityCategory:searchAbilityCategory } | filter: { abilityCategory:searchAbilityCategory2} | affiliationIs:selection | typeIs:typesSelection | colourIs:coloursSelection | resourceCostedIs:checkboxModel.ResourceCosted | dieValueIs:dropdownOperators.selectedOption:dieValueInput | sideIsComplex:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff" class="col-md-6">-->
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">

@@ -203,6 +203,34 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
   };
 
+// Discard Card Toggle filter---------------------------------
+
+  // Fruits
+  $scope.discardsCard = ['Deck', 'Hand'];
+
+  // Selected fruits
+  $scope.discardsCardSelection = ['Deck', 'Hand'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDiscardsCardSelection = function toggleDiscardsCardSelection(discardsCardName) {
+    var idx = $scope.discardsCardSelection.indexOf(discardsCardName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.discardsCardSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.discardsCardSelection.push(discardsCardName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
 // Dice Toggle filter---------------------------------
 
   // Fruits
@@ -241,7 +269,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
        OnlySides : false,
        DieSidesOnOff : false,
        ResourceCosted : false,
-       NotResourceCosted : false
+       NotResourceCosted : false,
+       DiscardUpgradeReturn : true
      };
 
 
@@ -1225,7 +1254,7 @@ app.filter('dieValueIs', function () {
 });
 
 app.filter('categoryIs', function () {
-  return function (items, searchCategory, discardCategory, diceCategory) {
+  return function (items, searchCategory, discardCategory, discardsCardName, DiscardUpgradeReturn, diceCategory) {
 
     var filtered = [];
     //console.log("searchCategory = " + searchCategory.name);
@@ -1233,17 +1262,65 @@ app.filter('categoryIs', function () {
 
         case "Discard":
             //console.log("Case 1");
+            //go through each item
             angular.forEach(items, function(item) {
+                //go through each item in the category array
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
+                    //This is to grab the first word from the custom category
                     var splitString = cat.split(" ");
                     //console.log("Splitstring = " + splitString[0]);
                     //console.log(splitString[0] + " VS " + searchCategory.name);
+                    //This puts the main category into it's own regexp
                     var stringMatch = new RegExp(splitString[0]);//no modifier to match Discard but not Card
+                    //This puts the current sub category into it's own regexp - 0 is ok because there is ever only one sub at active
                     var selectionMatch = new RegExp(discardCategory[0]);
+                    //gate to just the category and sub category
                     if (stringMatch.test(searchCategory.name) && selectionMatch.test(cat)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log(DiscardUpgradeReturn);
+                        if (discardCategory == 'Card') {
+                            //console.log("Card Cat");
+                            //index 0 because selection only matters when one of the two are selected (if both are then we can tell from length)
+                            var originMatch = new RegExp(discardsCardName[0]);
+                            //send back if the array uses both options
+                            if (discardsCardName.length == 2) {
+                                //console.log("MATCH");
+                                filtered.push(item);
+                            }
+                            //else check
+                            else if (discardsCardName[0] == 'Deck' && originMatch.test(cat)){
+                                     //console.log("MATCH");
+                                    filtered.push(item);
+                                     }
+                            else if (discardsCardName[0] == 'Hand' && originMatch.test(cat)){
+                                     //console.log("MATCH");
+                                    filtered.push(item);
+                                     }
+                        }
+
+                        else  if (discardCategory == 'Upgrade') {
+                            console.log("Upgrade");
+                            //index 0 because selection only matters when one of the two are selected (if both are then we can tell from length)
+                            var returnDiscardMatch = new RegExp('Return');
+                            if (DiscardUpgradeReturn == true){
+                                     console.log("true");
+                                    filtered.push(item);
+                                     }
+                            else if (DiscardUpgradeReturn == false && !returnDiscardMatch.test(cat)){
+                                     console.log("false");
+                                    filtered.push(item);
+                                     }
+                        }
+
+                        else {
+                            //console.log("MATCH");
+                            filtered.push(item);
+                        }
+
+
+
+
+
                     }
                 });
             });
@@ -1284,6 +1361,7 @@ app.filter('categoryIs', function () {
         case "Shield":
             console.log("Shield");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1291,16 +1369,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Keyword":
             console.log("Keyword");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1308,10 +1394,17 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
@@ -1335,23 +1428,32 @@ app.filter('categoryIs', function () {
         case "Damage":
             console.log("Damage");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
-                    console.log("Cat = " + cat);
+                    //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
                     //console.log("Splitstring = " + splitString[0]);
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Interrupt":
             console.log("Restriction");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1359,16 +1461,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Hand Reveal":
             console.log("Hand");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1376,10 +1486,17 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
@@ -1410,6 +1527,7 @@ app.filter('categoryIs', function () {
         case "Draw and Deck Search":
             console.log("Draw");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1417,16 +1535,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Cost Manipulation":
             console.log("Cost");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1434,16 +1560,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Resource":
-            console.log("Cost");
+            console.log("Resource");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1451,16 +1585,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Battlefield":
-            console.log("Cost");
+            console.log("Battlefield");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1468,16 +1610,24 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
         case "Synergy":
-            console.log("Cost");
+            console.log("Synergy");
             angular.forEach(items, function(item) {
+                var count = 0;//checking for dupes
                 angular.forEach(item.abilityCategory, function(cat) {
                     //console.log("Cat = " + cat);
                     var splitString = cat.split(" ");
@@ -1485,10 +1635,17 @@ app.filter('categoryIs', function () {
                     //console.log(splitString[0] + " VS " + searchCategory.name);
                     var stringMatch = new RegExp(splitString[0], 'i');
                     if (stringMatch.test(searchCategory.name)) {
-                        //console.log("MATCH");
-                        filtered.push(item);
+                        console.log("MATCH");
+                        if (count < 1) {
+                            //if ()
+                            //console.log("Pushed");
+                            count++;
+                            filtered.push(item);
+                        }
+                        else {console.log("DUPE")}
                     }
                 });
+              count = 0;
             });
             break;
 
