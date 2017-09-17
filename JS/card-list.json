@@ -1084,7 +1084,7 @@
 		"cp": 200,
 		"abilityCategory": [
 			"Keyword Redploy",
-			"Damage Upsize",
+			"Damage Trade Upsize",
 			"Dice Effect Value"
 		]
 	},
@@ -3923,7 +3923,7 @@
 		"cp": 0,
 		"abilityCategory": [
 			"Damage Unblockable",
-			"Dice Effect Unblockable"
+			"Dice Effect Resolve Unblockable"
 		]
 	},
 	{
@@ -4233,7 +4233,7 @@
 		"label": "Field Medic",
 		"cp": 100,
 		"abilityCategory": [
-			"Damage Removal"
+			"Damage Removal Heal"
 		]
 	},
 	{
@@ -4885,7 +4885,7 @@
 		"label": "Awakening",
 		"cp": 100,
 		"abilityCategory": [
-			"Dice Effect Nonmodified"
+			"Dice Effect Resolve Nonmodified"
 		]
 	},
 	{
@@ -5337,7 +5337,7 @@
 		"cp": 300,
 		"abilityCategory": [
 			"Interrupt Before Defeated",
-			"Damage Removal"
+			"Damage Removal Heal"
 		]
 	},
 	{
@@ -7301,7 +7301,7 @@
 		"label": "Lure of Power",
 		"cp": 200,
 		"abilityCategory": [
-			"Dice Effect Modify"
+			"Dice Effect Resolve Modify"
 		]
 	},
 	{
@@ -7860,7 +7860,7 @@
 		"label": "Temmin \"Snap\" Wexley - Recon Specialist",
 		"cp": 912,
 		"abilityCategory": [
-			"Cost Increase Battlefield",
+			"Bookmark future implement Cost Increase Battlefield",
 			"Battlfield Control",
 			"Resource Disrupt"
 		]
@@ -7906,7 +7906,7 @@
 		"label": "C-3PO",
 		"cp": 100,
 		"abilityCategory": [
-			"Dice Effect Symbol Trade"
+			"Dice Effect Resolve Symbol Trade"
 		]
 	},
 	{
@@ -8210,7 +8210,7 @@
 			"Keyword Guardian",
 			"Interrupt Before Defeated This",
 			"Card Upgrade Support Event Playfrom Discard Free",
-			"Cost Reduction Free",
+			"Cost Reduction Card Free",
 			"Bookmark"
 		]
 	},
@@ -10015,7 +10015,7 @@
 		"label": "Friends in High Places",
 		"cp": 0,
 		"abilityCategory": [
-			"Cost Reduction",
+			"Cost Reduction Card",
 			"Card Playfrom Deck"
 		]
 	},
@@ -10365,7 +10365,7 @@
 		"cp": 200,
 		"abilityCategory": [
 			"Draw Deck",
-			"Cost Reduction Discard",
+			"Cost Reduction Card Discard",
 			"Card Playfrom Discard Free",
 			"Resource Generation"
 		]
@@ -11033,7 +11033,7 @@
 		"cp": 100,
 		"abilityCategory": [
 			"Synergy Discard",
-			"Cost Reduction Discard",
+			"Cost Reduction Card Discard",
 			"Card Playfrom Discard"
 		]
 	},
@@ -11687,7 +11687,7 @@
 		"cp": 0,
 		"abilityCategory": [
 			"Card Playfrom",
-			"Cost Reduction Free"
+			"Cost Reduction Card Free"
 		]
 	},
 	{

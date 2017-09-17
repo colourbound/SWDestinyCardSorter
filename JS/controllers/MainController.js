@@ -260,6 +260,315 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   };
 
 
+// Dice Control Toggle filter---------------------------------
+
+  // Fruits
+  $scope.diceControl = ['Removal', 'Turn', 'Reroll'];
+
+  // Selected fruits
+  $scope.diceControlSelection = ['Removal', 'Turn', 'Reroll'];
+
+  //console.log($scope.diceControl + $scope.diceControlSelection)
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDiceControlSelection = function toggleDiceControlSelection(diceControlName) {
+    var idx = $scope.diceControlSelection.indexOf(diceControlName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.diceControlSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.diceControlSelection.push(diceControlName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Dice Effect Toggle filter---------------------------------
+
+  // Fruits
+  $scope.diceEffect = ['Value', 'Resolve', 'Other'];
+
+  // Selected fruits
+  $scope.diceEffectSelection = ['Value', 'Resolve', 'Other'];
+
+  //console.log($scope.diceControl + $scope.diceControlSelection)
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDiceEffectSelection = function toggleDiceEffectSelection(diceEffectName) {
+    var idx = $scope.diceEffectSelection.indexOf(diceEffectName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.diceEffectSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.diceEffectSelection.push(diceEffectName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+// Shield Toggle filter---------------------------------
+
+  // Fruits
+  $scope.shields = ['Generation', 'Removal', 'Synergy'];
+
+  // Selected fruits
+  $scope.shieldsSelection = ['Generation', 'Removal', 'Synergy'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleShieldsSelection = function toggleDiscardsSelection(shieldsName) {
+    var idx = $scope.shieldsSelection.indexOf(shieldsName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.shieldsSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.shieldsSelection.push(shieldsName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+// Keyword Toggle filter---------------------------------
+
+  // Fruits
+  $scope.keywords = ['Ambush', 'Guardian', 'Redeploy'];
+
+  // Selected fruits
+  $scope.keywordsSelection = ['Ambush', 'Guardian', 'Redeploy'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleKeywordsSelection = function toggleKeywordsSelection(keywordsName) {
+    var idx = $scope.keywordsSelection.indexOf(keywordsName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.keywordsSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.keywordsSelection.push(keywordsName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Damage Toggle filter---------------------------------
+
+  // Fruits
+  $scope.damage = ['Deal', 'Remove', 'Block'];
+
+  // Selected fruits
+  $scope.damageSelection = ['Deal'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDamageSelection = function toggleDamageSelection(damageName) {
+    var idx = $scope.damageSelection.indexOf(damageName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.damageSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.damageSelection = [];
+      $scope.damageSelection.push(damageName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Damage Deal Toggle filter---------------------------------
+
+  // Fruits
+  $scope.damageDeal = ['Die Value', 'Distributed', 'Handsize', 'No Remove', 'Reversal', 'Splash', 'Trade', 'Unblockable'];
+
+  // Selected fruits
+  $scope.damageDealSelection = ['Die Value', 'Distributed', 'Handsize', 'No Remove', 'Reversal', 'Splash', 'Trade', 'Unblockable'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDamageDealSelection = function toggleDamageDealSelection(damageDealName) {
+    var idx = $scope.damageDealSelection.indexOf(damageDealName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.damageDealSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.damageDealSelection.push(damageDealName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Damage Remove Toggle filter---------------------------------
+
+  // Fruits
+  $scope.damageRemove = ['Heal', 'Move'];
+
+  // Selected fruits
+  $scope.damageRemoveSelection = ['Heal', 'Move'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDamageRemoveSelection = function toggleDamageRemoveSelection(damageRemoveName) {
+    var idx = $scope.damageRemoveSelection.indexOf(damageRemoveName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.damageRemoveSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.damageRemoveSelection.push(damageRemoveName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Cost Reduction Toggle filter---------------------------------
+
+  // Fruits
+  $scope.costReduc = ['Dice', 'Event', 'Support', 'Upgrade'];
+
+  // Selected fruits
+  $scope.costReducSelection = ['Dice', 'Event', 'Support', 'Upgrade'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleCostReducSelection = function toggleCostReducSelection(costReducName) {
+    var idx = $scope.costReducSelection.indexOf(costReducName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.costReducSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.costReducSelection.push(costReducName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Hand Reveal Toggle filter---------------------------------
+
+  // Fruits
+  $scope.handPeak = ['Peak', 'Reveal'];
+
+  // Selected fruits
+  $scope.handPeakSelection = ['Peak', 'Reveal'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleHandPeakSelection = function toggleHandPeakSelection(handPeakName) {
+    var idx = $scope.handPeakSelection.indexOf(handPeakName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.handPeakSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.handPeakSelection.push(handPeakName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Draw, Search and Recycle Toggle filter---------------------------------
+
+  // Fruits
+  //$scope.drawSearch = ['Draw from Deck', 'Draw from Discard', 'Search', 'Recycle'];
+  $scope.drawSearch = ['Draw', 'Search', 'Recycle'];
+
+  // Selected fruits
+  $scope.drawSearchSelection = ['Draw'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDrawSearchSelection = function toggleDrawSearchSelection(drawSearchName) {
+    var idx = $scope.drawSearchSelection.indexOf(drawSearchName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.drawSearchSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.drawSearchSelection = [];
+      $scope.drawSearchSelection.push(drawSearchName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+// Draw Options Toggle filter---------------------------------
+
+  // Fruits
+  $scope.drawSource = ['Deck', 'Discard'];
+
+  // Selected fruits
+  $scope.drawSourceSelection = ['Deck'];
+
+  // Toggle selection for a given fruit by name
+  $scope.toggleDrawSourceSelection = function toggleDrawSourceSelection(drawSourceName) {
+    var idx = $scope.drawSourceSelection.indexOf(drawSourceName);
+
+    // Is currently selected
+    if (idx > -1) {
+      $scope.drawSourceSelection.splice(idx, 1);
+    }
+
+    // Is newly selected
+    else {
+      $scope.drawSourceSelection = [];
+      $scope.drawSourceSelection.push(drawSourceName);
+        $scope.setObject = function(newValue) {
+        $scope.objectValue.data = newValue;
+        sharedProperties.setObject(newValue);
+        };
+    }
+  };
+
+
+
 
 
 // ---------------------------------
@@ -306,11 +615,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '4', name: 'Keyword'},
           {id: '5', name: 'Action Cheat'},
           {id: '6', name: 'Damage'},
-          {id: '7', name: 'Cost Manipulation'},
+          {id: '7', name: 'Cost Reduction'},
           {id: '8', name: 'Interrupt'},
           {id: '9', name: 'Hand Reveal'},
           {id: '10', name: 'Card Manipulation'},
-          {id: '11', name: 'Draw and Deck Search'},
+          {id: '11', name: 'Draw, Search and Recycle'},
           {id: '12', name: 'Resource'},
           {id: '13', name: 'Battlefield'},
           {id: '14', name: 'Synergy'}
@@ -1524,7 +1833,7 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Draw and Deck Search":
+        case "Draw, Search and Recycle":
             console.log("Draw");
             angular.forEach(items, function(item) {
                 var count = 0;//checking for dupes
@@ -1549,7 +1858,7 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Cost Manipulation":
+        case "Cost Reduction":
             console.log("Cost");
             angular.forEach(items, function(item) {
                 var count = 0;//checking for dupes

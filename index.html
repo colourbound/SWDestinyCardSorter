@@ -224,12 +224,179 @@
                 </div>
                 <br />
                 <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!diceCatSelection.indexOf('Control')">
-                Control OPTIONS!
+                    Control OPTIONS!
+                    <br />
+                    <label class="btn btn-default btn-sm" ng-repeat="diceControlName in diceControl">
+                      <input
+                        type="checkbox"
+                        name="selectedDiceControl[]"
+                        value="{{diceControlName}}"
+                        ng-checked="diceControlSelection.indexOf(diceControlName) > -1"
+                        ng-click="toggleDiceControlSelection(diceControlName)"
+                      > <strong>{{diceControlName}}</strong>
+                    </label>
                 </div>
                 <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!diceCatSelection.indexOf('Effect')">
-                Effect OPTIONS!
+                    Effect OPTIONS!
+                    <br />
+                    <label class="btn btn-default btn-sm" ng-repeat="diceEffectName in diceEffect">
+                      <input
+                        type="checkbox"
+                        name="selectedDiceEffect[]"
+                        value="{{diceEffectName}}"
+                        ng-checked="diceEffectSelection.indexOf(diceEffectName) > -1"
+                        ng-click="toggleDiceEffectSelection(diceEffectName)"
+                      > <strong>{{diceEffectName}}</strong>
+                    </label>
                 </div>
                 <br />
+            </div>
+
+            <!------------SHIELD----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Shield'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="shieldsName in shields">
+                  <input
+                    type="checkbox"
+                    name="selectedShields[]"
+                    value="{{shieldsName}}"
+                    ng-checked="shieldsSelection.indexOf(shieldsName) > -1"
+                    ng-click="toggleShieldsSelection(shieldsName)"
+                  > <strong>{{shieldsName}}</strong>
+                </label>
+                </div>
+                <br />
+            </div>
+
+            <!------------KEYWORD----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Keyword'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="keywordsName in keywords">
+                  <input
+                    type="checkbox"
+                    name="selectedKeywords[]"
+                    value="{{keywordsName}}"
+                    ng-checked="keywordsSelection.indexOf(keywordsName) > -1"
+                    ng-click="toggleKeywordsSelection(keywordsName)"
+                  > <strong>{{keywordsName}}</strong>
+                </label>
+                </div>
+                <br />
+            </div>
+
+            <!------------DAMAGE----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Damage'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="damageName in damage">
+                  <input
+                    type="checkbox"
+                    name="selectedDamage[]"
+                    value="{{damageName}}"
+                    ng-checked="damageSelection.indexOf(damageName) > -1"
+                    ng-click="toggleDamageSelection(damageName)"
+                  > <strong>{{damageName}}</strong>
+                </label>
+                </div>
+                <br />
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!damageSelection.indexOf('Deal')">
+                    Card OPTIONS!
+                    <br />
+                        <label class="btn btn-default btn-sm" ng-repeat="damageDealName in damageDeal">
+                          <input
+                            type="checkbox"
+                            name="selectedDamageDeal[]"
+                            value="{{damageDealName}}"
+                            ng-checked="damageDealSelection.indexOf(damageDealName) > -1"
+                            ng-click="toggleDamageDealSelection(damageDealName)"
+                          > <strong>{{damageDealName}}</strong>
+                        </label>
+                </div>
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!damageSelection.indexOf('Remove')">
+                    Remove OPTIONS!
+                    <br />
+                        <label class="btn btn-default btn-sm" ng-repeat="damageRemoveName in damageRemove">
+                          <input
+                            type="checkbox"
+                            name="selectedDamageRemove[]"
+                            value="{{damageRemoveName}}"
+                            ng-checked="damageRemoveSelection.indexOf(damageRemoveName) > -1"
+                            ng-click="toggleDamageRemoveSelection(damageRemoveName)"
+                          > <strong>{{damageRemoveName}}</strong>
+                        </label>
+                </div>
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!damageSelection.indexOf('Block')">
+                    Block OPTIONS!
+
+                </div>
+                <br />
+            </div>
+
+            <!------------Cost Reduction----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Cost Reduction'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="costReducName in costReduc">
+                  <input
+                    type="checkbox"
+                    name="selectedCostReduc[]"
+                    value="{{costReducName}}"
+                    ng-checked="costReducSelection.indexOf(costReducName) > -1"
+                    ng-click="toggleCostReducSelection(costReducName)"
+                  > <strong>{{costReducName}}</strong>
+                </label>
+                </div>
+                <br />
+            </div>
+
+            <!------------Hand Reveal Reduction----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Hand Reveal'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="handPeakName in handPeak">
+                  <input
+                    type="checkbox"
+                    name="selectedHandPeak[]"
+                    value="{{handPeakName}}"
+                    ng-checked="handPeakSelection.indexOf(handPeakName) > -1"
+                    ng-click="toggleHandPeakSelection(handPeakName)"
+                  > <strong>{{handPeakName}}</strong>
+                </label>
+                </div>
+                <br />
+            </div>
+
+            <!------------Draw Search Reduction----------------->
+
+            <div class="cb col-sm-6 check-element animate-show-hide" ng-show="dropdownCardCategory.selectedOption.name == 'Draw, Search and Recycle'">
+                <div class="col-sm-6" style="margin-bottom:10px">
+                <label class="btn btn-default btn-sm" ng-repeat="drawSearchName in drawSearch">
+                  <input
+                    type="checkbox"
+                    name="selectedDrawSearch[]"
+                    value="{{drawSearchName}}"
+                    ng-checked="drawSearchSelection.indexOf(drawSearchName) > -1"
+                    ng-click="toggleDrawSearchSelection(drawSearchName)"
+                  > <strong>{{drawSearchName}}</strong>
+                </label>
+                </div>
+                <br />
+
+                <div class="clearfloat col-sm-6 check-element animate-show-hide" ng-show="!drawSearchSelection.indexOf('Draw')">
+                    Draw OPTIONS!
+                    <br />
+                        <label class="btn btn-default btn-sm" ng-repeat="drawSourceName in drawSource">
+                          <input
+                            type="checkbox"
+                            name="selectedDrawSourceName[]"
+                            value="{{drawSourceName}}"
+                            ng-checked="drawSourceSelection.indexOf(drawSourceName) > -1"
+                            ng-click="toggleDrawSourceSelection(drawSourceName)"
+                          > <strong>{{drawSourceName}}</strong>
+                        </label>
+                </div>
             </div>
 
 
@@ -250,9 +417,13 @@
                 categoryIs:
                     dropdownCardCategory.selectedOption:
                             discardsSelection:
-                            discardsCardSelection:
-                            checkboxModel.DiscardUpgradeReturn:
-                    diceCatSelection |
+                                discardsCardSelection:
+                                checkboxModel.DiscardUpgradeReturn:
+                            diceCatSelection:
+                                diceControlSelection:
+                                diceEffectSelection
+
+                |
                 resourceCostedIs:checkboxModel.ResourceCosted:checkboxModel.NotResourceCosted | sideIsComplexSideValue:sidesSelection:checkboxModel.OnlySides:checkboxModel.DieSidesOnOff:dropdownOperators.selectedOption:dieValueInput:dieSideCount"
              class="col-md-6">
 
