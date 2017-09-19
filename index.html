@@ -8,6 +8,8 @@
 
     <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>-->
     <script src="AngularJS/angular.min.js"></script>
+    <!--<script src="AngularJS/angular-sanitize.min.js"></script><!--This is used for ngBindHtml-->
+
 </head>
 
 <body ng-app="myApp">
@@ -159,6 +161,15 @@
 
             <span>Card Category</span><br />
             <select class="cb col-sm-2" ng-model="dropdownCardCategory.selectedOption" ng-options="option.name for option in dropdownCardCategory.availableOptions track by option.id"></select>
+
+            <label class="btn btn-default btn-sm">
+              <input
+                type="checkbox"
+                name="Category Filter"
+                value="Category Filter"
+                ng-model="checkboxModel.CategoryFilterEnable"
+              > <strong>Filter by category</strong>
+            </label>
 
             <div class="clearfloat"></div>
             <br />
@@ -415,6 +426,7 @@
                 typeIs:typesSelection |
                 colourIs:coloursSelection |
                 categoryIs:
+                    checkboxModel.CategoryFilterEnable:
                     dropdownCardCategory.selectedOption:
                             discardsSelection:
                                 discardsCardSelection:
@@ -431,6 +443,9 @@
                 <div class="thumbnail">
                     <img ng-src="{{ card.imagesrc }}">
                     <p class="title">{{ card.name }}</p>
+                    <p class="description">{{ card.text }}</p>
+                    <!--<p class="description" ng-bind-html=trustSnippet(card.text)></p>-->
+                    <!--<p class="description" ng-bind-html="card.text" ></p>-->
                     <p class="price">{{ card.code }}</p>
                     <p class="date">{{ product.pubdate | date }}</p>
                     <div class="rating">
