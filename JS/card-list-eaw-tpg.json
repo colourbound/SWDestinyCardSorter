@@ -3135,8 +3135,8 @@
         "label": "Unyielding",
         "cp": 100,
 		"abilityCategory": [
-			"Bookmark",
-			"Action Cheat"
+			"Damage Unblockable",
+			"Dice Effect Resolve"
 		]
     },
     {
@@ -3168,7 +3168,11 @@
         "url": "http://swdestinydb.com/card/03076",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03076.jpg",
         "label": "Insidious",
-        "cp": 100
+        "cp": 100,
+		"abilityCategory": [
+			"Synergy Blanks",
+			"Resource Generation"
+		]
     },
     {
         "set_code": "EaW",
@@ -3199,7 +3203,12 @@
         "url": "http://swdestinydb.com/card/03077",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03077.jpg",
         "label": "Hate",
-        "cp": 100
+        "cp": 100,
+		"abilityCategory": [
+			"Keyword Redeploy",
+			"Interrupt After Activate",
+            "Damage Sacrifice"
+		]
     },
     {
         "set_code": "EaW",
@@ -3230,7 +3239,10 @@
         "url": "http://swdestinydb.com/card/03078",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03078.jpg",
         "label": "Anarchy",
-        "cp": 300
+        "cp": 300,
+		"abilityCategory": [
+			"Damage Splash"
+		]
     },
     {
         "set_code": "EaW",
@@ -3261,7 +3273,10 @@
         "url": "http://swdestinydb.com/card/03079",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03079.jpg",
         "label": "Bounty Postings",
-        "cp": 100
+        "cp": 100,
+		"abilityCategory": [
+			"Draw Deck"
+		]
     },
     {
         "set_code": "EaW",
@@ -3292,7 +3307,11 @@
         "url": "http://swdestinydb.com/card/03080",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03080.jpg",
         "label": "Buy Out",
-        "cp": 0
+        "cp": 0,
+		"abilityCategory": [
+			"Discard Card Deck",
+			"Synergy Resource"
+		]
     },
     {
         "set_code": "EaW",
@@ -3323,7 +3342,11 @@
         "url": "http://swdestinydb.com/card/03081",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03081.jpg",
         "label": "Coercion",
-        "cp": 100
+        "cp": 100,
+		"abilityCategory": [
+			"Hand Reveal",
+			"Card Event Forced"
+		]
     },
     {
         "set_code": "EaW",
@@ -3354,7 +3377,10 @@
         "url": "http://swdestinydb.com/card/03082",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03082.jpg",
         "label": "Only Business Matters",
-        "cp": 100
+        "cp": 100,
+		"abilityCategory": [
+			"Resource Generation"
+		]
     },
     {
         "set_code": "EaW",
@@ -3385,7 +3411,11 @@
         "url": "http://swdestinydb.com/card/03083",
         "imagesrc": "http://swdestinydb.com/bundles/cards/en/03/03083.jpg",
         "label": "Pilfered Goods",
-        "cp": 500
+        "cp": 500,
+		"abilityCategory": [
+			"Cost Reduction Upgrade Free",
+			"Card Upgrade Bookmark"
+		]
     },
     {
         "set_code": "EaW",
@@ -3416,7 +3446,10 @@
         "url": "http://swdestinydb.com/card/03084",
         "imagesrc": null,
         "label": "Twin Shadows",
-        "cp": 200
+        "cp": 200,
+		"abilityCategory": [
+			"Dice Control Removal"
+		]
     },
     {
         "set_code": "EaW",
