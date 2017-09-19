@@ -617,12 +617,13 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           {id: '6', name: 'Damage'},
           {id: '7', name: 'Cost Reduction'},
           {id: '8', name: 'Interrupt'},
-          {id: '9', name: 'Hand Reveal'},
+          {id: '9', name: 'Hand and Deck Reveal'},
           {id: '10', name: 'Card Manipulation'},
           {id: '11', name: 'Draw, Search and Recycle'},
           {id: '12', name: 'Resource'},
           {id: '13', name: 'Battlefield'},
-          {id: '14', name: 'Synergy'}
+          {id: '14', name: 'Synergy'},
+          {id: '15', name: 'Misc'}
 
         ],
         selectedOption: {id: '1', name: 'Discard'} //This sets the default value of the select in the ui
@@ -1784,7 +1785,7 @@ app.filter('categoryIs', function () {
             });
             break;
 
-        case "Hand Reveal":
+        case "Hand and Deck Reveal":
             console.log("Hand");
             angular.forEach(items, function(item) {
                 var count = 0;//checking for dupes
