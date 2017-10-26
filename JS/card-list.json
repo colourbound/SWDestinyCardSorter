@@ -12274,6 +12274,7 @@
 		"cp": 0,
 		"abilityCategory": [
 			"Keyword Ambush",
+            "Action Cheat",
 			"Synergy Blanks",
 			"Dice Control Reroll Dice"
 		]
@@ -15348,7 +15349,8 @@
         "cp": 200,
 		"abilityCategory": [
 			"Dice Effect Resolve Reversal",
-			"Cost Reduction Dice"
+			"Cost Reduction Dice",
+            "Damage Reversal Bookmark Unsureifthisshouldbeinthiscategory"
 		]
     },
     {
